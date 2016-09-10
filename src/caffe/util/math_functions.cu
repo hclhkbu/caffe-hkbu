@@ -10,6 +10,8 @@
 
 namespace caffe {
 
+#define TILE_DIM    16
+
 template <>
 void caffe_gpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
     const CBLAS_TRANSPOSE TransB, const int M, const int N, const int K,
@@ -22,8 +24,52 @@ void caffe_gpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
       (TransA == CblasNoTrans) ? CUBLAS_OP_N : CUBLAS_OP_T;
   cublasOperation_t cuTransB =
       (TransB == CblasNoTrans) ? CUBLAS_OP_N : CUBLAS_OP_T;
-  CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
-      N, M, K, &alpha, B, ldb, A, lda, &beta, C, N));
+  if (cuTransA == CUBLAS_OP_N && cuTransB == CUBLAS_OP_T) {
+      caffe_gpu_gemm_tn(M, N, K, alpha, A, B, beta, C);
+  } else {
+      CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
+                  N, M, K, &alpha, B, ldb, A, lda, &beta, C, N));
+  }
+}
+
+// Customized by COMP@HKBU
+// Authors: Pengfei Xu, Shaohuai Shi
+template <typename Dtype>
+__global__ void caffe_gpu_transpose(float *dmt, float *dm, int w, int h)
+{
+	__shared__ float tile[TILE_DIM][TILE_DIM];
+	int row = blockIdx.y * blockDim.y + threadIdx.y;
+	int col = blockIdx.x * blockDim.x + threadIdx.x;
+	int old_idx = row*w + col;
+	int new_idx = col*h + row;
+	if(row < h && col < w){
+		tile[threadIdx.y][threadIdx.x] = dm[old_idx];
+		__syncthreads();
+		dmt[new_idx] = tile[threadIdx.y][threadIdx.x];
+	}
+}
+
+// Compute C = alpha * A * B^T + beta * C
+// Size of A: M * K, WA=K, HA=M
+// Size of B: N * K, WB=K, HB=N
+// Size of C: M * N, WC=N, HC=M 
+void caffe_gpu_gemm_tn(const int M, const int N, const int K,
+    const float alpha, const float* A, const float* B, const float beta,
+    float* C) {
+  // Do the transposition first before calling cublas
+  int size_x, size_y;
+  size_x = K;
+  size_y = N;
+  dim3 gridt((size_x - 1)/TILE_DIM  + 1, (size_y - 1)/TILE_DIM + 1), blockt(TILE_DIM, TILE_DIM);
+  float *d_BT;
+  CUDA_CHECK(cudaMalloc((void **) &d_BT, size_x * size_y * sizeof(float)));
+  caffe_gpu_transpose<float><<<gridt, blockt>>>(d_BT, (float *)B, size_x, size_y);
+  
+  int lda = K; 
+  int ldb = N; 
+  CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), CUBLAS_OP_N, CUBLAS_OP_N,
+      N, M, K, &alpha, d_BT, ldb, A, lda, &beta, C, N));
+  CUDA_CHECK(cudaFree(d_BT));
 }
 
 template <>
@@ -414,5 +460,6 @@ void caffe_gpu_rng_gaussian(const int n, const double mu, const double sigma,
   CURAND_CHECK(
       curandGenerateNormalDouble(Caffe::curand_generator(), r, n, mu, sigma));
 }
+
 
 }  // namespace caffe
