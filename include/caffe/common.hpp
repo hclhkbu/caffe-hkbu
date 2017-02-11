@@ -136,6 +136,9 @@ class Caffe {
   inline static curandGenerator_t curand_generator() {
     return Get().curand_generator_;
   }
+
+  // Integrated with SVM model for calculating A*B^T with cuBLAS
+  static double predict(size_t nWA, size_t nHA, size_t nHB);
 #endif
 
   // Returns the mode: running on CPU or GPU.
@@ -164,10 +167,13 @@ class Caffe {
   inline static bool root_solver() { return Get().root_solver_; }
   inline static void set_root_solver(bool val) { Get().root_solver_ = val; }
 
+
  protected:
 #ifndef CPU_ONLY
   cublasHandle_t cublas_handle_;
   curandGenerator_t curand_generator_;
+  struct svm_model *model_;
+  struct svm_node *node_;
 #endif
   shared_ptr<RNG> random_generator_;
 

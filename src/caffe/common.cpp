@@ -1,5 +1,7 @@
 #include <boost/thread.hpp>
 #include <glog/logging.h>
+#include <svm.h>
+
 #include <cmath>
 #include <cstdio>
 #include <ctime>
@@ -119,12 +121,21 @@ Caffe::Caffe()
       != CURAND_STATUS_SUCCESS) {
     LOG(ERROR) << "Cannot create Curand generator. Curand won't be available.";
   }
+  model_ = svm_load_model("/tmp/gemm.model");
+  int nNumAttr = 3;
+  node_ = (struct svm_node *) malloc(nNumAttr*sizeof(struct svm_node));
 }
 
 Caffe::~Caffe() {
   if (cublas_handle_) CUBLAS_CHECK(cublasDestroy(cublas_handle_));
   if (curand_generator_) {
     CURAND_CHECK(curandDestroyGenerator(curand_generator_));
+  }
+  if (model_) {
+      svm_free_and_destroy_model(&model_);
+  }
+  if (node_) {
+      free(node_);
   }
 }
 
@@ -235,6 +246,18 @@ int Caffe::FindDevice(const int start_id) {
   return -1;
 }
 
+double Caffe::predict(size_t nWA, size_t nHA, size_t nHB) {
+  Get().node_[0].index = 1;
+  Get().node_[0].value = log2(double(nHA));
+  Get().node_[1].index = 2;
+  Get().node_[1].value = log2(double(nHB));
+  Get().node_[2].index = 3;
+  Get().node_[2].value = log2(double(nWA));
+  Get().node_[3].index = -1;
+  double predict_label = svm_predict(Get().model_, Get().node_);
+  return predict_label;
+}
+
 class Caffe::RNG::Generator {
  public:
   Generator() : rng_(new caffe::rng_t(cluster_seedgen())) {}
@@ -318,6 +341,8 @@ const char* curandGetErrorString(curandStatus_t error) {
   }
   return "Unknown curand status";
 }
+
+
 
 #endif  // CPU_ONLY
 

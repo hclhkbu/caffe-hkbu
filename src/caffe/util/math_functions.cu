@@ -24,8 +24,28 @@ void caffe_gpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
       (TransA == CblasNoTrans) ? CUBLAS_OP_N : CUBLAS_OP_T;
   cublasOperation_t cuTransB =
       (TransB == CblasNoTrans) ? CUBLAS_OP_N : CUBLAS_OP_T;
+
+  // 1. Naive: only use cublasSgemm: nn or tn
+  // 2. Force: force to use transpose + nn if there is enough memory
+  // 3. Linear model: some cases: transpose+nn, other cases: tn 
   if (cuTransA == CUBLAS_OP_N && cuTransB == CUBLAS_OP_T) {
-      caffe_gpu_gemm_tn(M, N, K, alpha, A, B, beta, C);
+      size_t availableMemory, totalMemory;
+      cudaMemGetInfo(&availableMemory, &totalMemory);
+      size_t neededMemory = sizeof(float) * N * K;
+
+      if (availableMemory > neededMemory)  {
+          double label = Caffe::predict(M, N, K);
+          if (label < 0) {
+            caffe_gpu_gemm_tn(M, N, K, alpha, A, B, beta, C);
+          } else {
+            CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
+                          N, M, K, &alpha, B, ldb, A, lda, &beta, C, N));
+          }
+      } else {
+          CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
+                  N, M, K, &alpha, B, ldb, A, lda, &beta, C, N));
+      }
+
   } else {
       CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
                   N, M, K, &alpha, B, ldb, A, lda, &beta, C, N));
@@ -63,7 +83,12 @@ void caffe_gpu_gemm_tn(const int M, const int N, const int K,
   dim3 gridt((size_x - 1)/TILE_DIM  + 1, (size_y - 1)/TILE_DIM + 1), blockt(TILE_DIM, TILE_DIM);
   float *d_BT;
   CUDA_CHECK(cudaMalloc((void **) &d_BT, size_x * size_y * sizeof(float)));
-  caffe_gpu_transpose<float><<<gridt, blockt>>>(d_BT, (float *)B, size_x, size_y);
+  //caffe_gpu_transpose<float><<<gridt, blockt>>>(d_BT, (float *)B, size_x, size_y);
+  CUBLAS_CHECK(cublasSgeam(Caffe::cublas_handle(), CUBLAS_OP_T, CUBLAS_OP_T,
+              N, K,  
+              &alpha, B, K,  
+              &beta, NULL, K,
+              d_BT, N));
   
   int lda = K; 
   int ldb = N; 
