@@ -41,4 +41,4 @@ if __name__ == '__main__':
         for batch in batches:
             config_file = '%d-%d-b%d.prototxt' % (h1, h2, batch)
             ms = execute(config_file)
-            print ms/1000
+            print ','.join([str(batch), str(h1), str(h2), str(ms/1000)])
