@@ -23,7 +23,7 @@
  /usr/local/cuda-8.0/include/cuda_fp16.h \
  /usr/local/cuda-8.0/include/cuda.h /usr/local/cuda-8.0/include/curand.h \
  /usr/local/cuda-8.0/include/driver_types.h include/caffe/util/cudnn.hpp \
- /usr/local/cudnn-5.1/cuda/include/cudnn.h \
+ /usr/local/cuda-8.0/include/cudnn.h \
  .build-8.0_release/src/caffe/proto/caffe.pb.h \
  include/caffe/syncedmem.hpp include/caffe/filler.hpp \
  include/caffe/util/math_functions.hpp \
@@ -91,7 +91,7 @@ include/caffe/util/device_alternate.hpp:
 
 include/caffe/util/cudnn.hpp:
 
-/usr/local/cudnn-5.1/cuda/include/cudnn.h:
+/usr/local/cuda-8.0/include/cudnn.h:
 
 .build-8.0_release/src/caffe/proto/caffe.pb.h:
 

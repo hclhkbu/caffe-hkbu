@@ -3,9 +3,10 @@ import sys,os,time
 import subprocess
 import re
 
-#caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
-caffebin='/home/dl/caffe-openblas/build/tools/caffe'
-config_file_home='/home/dl/caffe-hkbu-lr/benchmarks/2_layer'
+#caffebin='/home/comp/csshshi/caffe-optimized/build-8.0/tools/caffe'
+#caffebin='/home/dl/caffe-openblas/build/tools/caffe'
+caffebin='caffe'
+config_file_home='/home/comp/csshshi/caffe-optimized/benchmarks/2_layer'
 #default_gpu_id=0
 default_gpu_id=1
 

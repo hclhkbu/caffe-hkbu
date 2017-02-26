@@ -398,7 +398,7 @@
  /usr/local/cuda-8.0/include/vector_functions.h \
  /usr/local/cuda-8.0/include/vector_functions.hpp \
  /usr/local/cuda-8.0/include/curand.h include/caffe/util/cudnn.hpp \
- /usr/local/cudnn-5.1/cuda/include/cudnn.h \
+ /usr/local/cuda-8.0/include/cudnn.h \
  .build-8.0_release/src/caffe/proto/caffe.pb.h \
  include/caffe/syncedmem.hpp include/caffe/layer.hpp \
  include/caffe/layer_factory.hpp include/caffe/util/math_functions.hpp \
@@ -1207,7 +1207,7 @@ include/caffe/util/device_alternate.hpp:
 
 include/caffe/util/cudnn.hpp:
 
-/usr/local/cudnn-5.1/cuda/include/cudnn.h:
+/usr/local/cuda-8.0/include/cudnn.h:
 
 .build-8.0_release/src/caffe/proto/caffe.pb.h:
 
