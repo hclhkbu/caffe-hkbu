@@ -263,10 +263,12 @@
     /usr/include/c++/4.8/bits/sstream.tcc \
     /usr/include/glog/log_severity.h \
     /usr/include/glog/vlog_is_on.h \
+    /home/dl/shshi/xgboost/include/xgboost/c_api.h \
+    /home/dl/shshi/xgboost/rabit/include/rabit/c_api.h \
+    /usr/include/c++/4.8/cstdio \
     /usr/include/c++/4.8/climits \
     /usr/include/c++/4.8/fstream \
     /usr/include/c++/4.8/bits/codecvt.h \
-    /usr/include/c++/4.8/cstdio \
     /usr/include/x86_64-linux-gnu/c++/4.8/bits/basic_file.h \
     /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++io.h \
     /usr/include/c++/4.8/bits/fstream.tcc \

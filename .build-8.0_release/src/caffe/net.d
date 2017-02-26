@@ -1,5 +1,7 @@
 .build-8.0_release/src/caffe/net.o: src/caffe/net.cpp \
- include/caffe/common.hpp include/caffe/util/device_alternate.hpp \
+ include/caffe/common.hpp /home/dl/shshi/xgboost/include/xgboost/c_api.h \
+ /home/dl/shshi/xgboost/rabit/include/rabit/c_api.h \
+ include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
  /usr/local/cuda-8.0/include/driver_types.h \
@@ -36,6 +38,10 @@
  include/caffe/test/test_caffe_main.hpp src/gtest/gtest.h
 
 include/caffe/common.hpp:
+
+/home/dl/shshi/xgboost/include/xgboost/c_api.h:
+
+/home/dl/shshi/xgboost/rabit/include/rabit/c_api.h:
 
 include/caffe/util/device_alternate.hpp:
 

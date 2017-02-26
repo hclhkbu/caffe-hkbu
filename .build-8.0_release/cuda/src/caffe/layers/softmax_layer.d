@@ -649,6 +649,8 @@
     /usr/include/c++/4.8/bits/sstream.tcc \
     /usr/include/glog/log_severity.h \
     /usr/include/glog/vlog_is_on.h \
+    /home/dl/shshi/xgboost/include/xgboost/c_api.h \
+    /home/dl/shshi/xgboost/rabit/include/rabit/c_api.h \
     /usr/include/c++/4.8/climits \
     /usr/include/c++/4.8/fstream \
     /usr/include/c++/4.8/bits/codecvt.h \

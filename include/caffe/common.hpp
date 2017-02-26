@@ -4,6 +4,7 @@
 #include <boost/shared_ptr.hpp>
 #include <gflags/gflags.h>
 #include <glog/logging.h>
+#include <xgboost/c_api.h>
 
 #include <climits>
 #include <cmath>
@@ -139,6 +140,7 @@ class Caffe {
 
   // Integrated with SVM model for calculating A*B^T with cuBLAS
   static double predict(size_t nWA, size_t nHA, size_t nHB);
+  static double xgPredict(size_t nWA, size_t nHA, size_t nHB);
 #endif
 
   // Returns the mode: running on CPU or GPU.
@@ -174,6 +176,10 @@ class Caffe {
   curandGenerator_t curand_generator_;
   struct svm_model *model_;
   struct svm_node *node_;
+  cudaDeviceProp deviceProp_;
+  BoosterHandle xgBooster_;
+  float xgSampleFeatures_[1][14];
+  DMatrixHandle xgTrain_[1];
 #endif
   shared_ptr<RNG> random_generator_;
 

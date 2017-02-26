@@ -72,6 +72,7 @@ models/*
 build
 .build_debug/*
 .build_release/*
+.build-8.0_release/*
 distribute/*
 *.testbin
 *.bin

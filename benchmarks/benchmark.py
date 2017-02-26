@@ -5,9 +5,11 @@ import re
 
 #caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
 caffebin='/home/dl/caffe-openblas/build/tools/caffe'
+#caffebin='/home/dl/caffe-hkbu/build-8.0/tools/caffe'
+
 config_file_home='/home/dl/caffe-hkbu-lr/benchmarks/2_layer'
-#default_gpu_id=0
-default_gpu_id=1
+default_gpu_id=0
+#default_gpu_id=1
 
 def get_average_time(filename):
     file = open(filename, "r")

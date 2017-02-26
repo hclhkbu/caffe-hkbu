@@ -383,7 +383,9 @@
  /usr/local/cuda-8.0/include/thrust/host_vector.h \
  /usr/local/cuda-8.0/include/thrust/detail/host_vector.inl \
  include/caffe/layers/cudnn_softmax_layer.hpp include/caffe/blob.hpp \
- include/caffe/common.hpp include/caffe/util/device_alternate.hpp \
+ include/caffe/common.hpp /home/dl/shshi/xgboost/include/xgboost/c_api.h \
+ /home/dl/shshi/xgboost/rabit/include/rabit/c_api.h \
+ include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
  /usr/local/cuda-8.0/include/cuComplex.h \
@@ -1174,6 +1176,10 @@ include/caffe/layers/cudnn_softmax_layer.hpp:
 include/caffe/blob.hpp:
 
 include/caffe/common.hpp:
+
+/home/dl/shshi/xgboost/include/xgboost/c_api.h:
+
+/home/dl/shshi/xgboost/rabit/include/rabit/c_api.h:
 
 include/caffe/util/device_alternate.hpp:
 

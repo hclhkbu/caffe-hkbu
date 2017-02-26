@@ -1,7 +1,9 @@
 .build-8.0_release/tools/compute_image_mean.o: \
  tools/compute_image_mean.cpp \
  .build-8.0_release/src/caffe/proto/caffe.pb.h include/caffe/util/db.hpp \
- include/caffe/common.hpp include/caffe/util/device_alternate.hpp \
+ include/caffe/common.hpp /home/dl/shshi/xgboost/include/xgboost/c_api.h \
+ /home/dl/shshi/xgboost/rabit/include/rabit/c_api.h \
+ include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
  /usr/local/cuda-8.0/include/driver_types.h \
@@ -33,6 +35,10 @@
 include/caffe/util/db.hpp:
 
 include/caffe/common.hpp:
+
+/home/dl/shshi/xgboost/include/xgboost/c_api.h:
+
+/home/dl/shshi/xgboost/rabit/include/rabit/c_api.h:
 
 include/caffe/util/device_alternate.hpp:
 

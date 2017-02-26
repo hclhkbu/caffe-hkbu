@@ -1,5 +1,7 @@
 .build-8.0_release/src/caffe/layer.o: src/caffe/layer.cpp \
  include/caffe/layer.hpp include/caffe/blob.hpp include/caffe/common.hpp \
+ /home/dl/shshi/xgboost/include/xgboost/c_api.h \
+ /home/dl/shshi/xgboost/rabit/include/rabit/c_api.h \
  include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
@@ -35,6 +37,10 @@ include/caffe/layer.hpp:
 include/caffe/blob.hpp:
 
 include/caffe/common.hpp:
+
+/home/dl/shshi/xgboost/include/xgboost/c_api.h:
+
+/home/dl/shshi/xgboost/rabit/include/rabit/c_api.h:
 
 include/caffe/util/device_alternate.hpp:
 
