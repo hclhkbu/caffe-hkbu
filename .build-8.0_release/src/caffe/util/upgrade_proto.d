@@ -1,5 +1,7 @@
 .build-8.0_release/src/caffe/util/upgrade_proto.o: \
  src/caffe/util/upgrade_proto.cpp include/caffe/common.hpp \
+ /home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h \
+ /home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h \
  include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
@@ -29,6 +31,10 @@
  include/caffe/util/format.hpp include/caffe/util/upgrade_proto.hpp
 
 include/caffe/common.hpp:
+
+/home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h:
+
+/home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h:
 
 include/caffe/util/device_alternate.hpp:
 

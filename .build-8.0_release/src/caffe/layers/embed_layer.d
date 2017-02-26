@@ -1,6 +1,8 @@
 .build-8.0_release/src/caffe/layers/embed_layer.o: \
  src/caffe/layers/embed_layer.cpp include/caffe/filler.hpp \
  include/caffe/blob.hpp include/caffe/common.hpp \
+ /home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h \
+ /home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h \
  include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
@@ -37,6 +39,10 @@ include/caffe/filler.hpp:
 include/caffe/blob.hpp:
 
 include/caffe/common.hpp:
+
+/home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h:
+
+/home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h:
 
 include/caffe/util/device_alternate.hpp:
 

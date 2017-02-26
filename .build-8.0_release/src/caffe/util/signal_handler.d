@@ -2,6 +2,8 @@
  src/caffe/util/signal_handler.cpp include/caffe/util/signal_handler.h \
  .build-8.0_release/src/caffe/proto/caffe.pb.h include/caffe/solver.hpp \
  include/caffe/net.hpp include/caffe/blob.hpp include/caffe/common.hpp \
+ /home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h \
+ /home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h \
  include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
@@ -42,6 +44,10 @@ include/caffe/net.hpp:
 include/caffe/blob.hpp:
 
 include/caffe/common.hpp:
+
+/home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h:
+
+/home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h:
 
 include/caffe/util/device_alternate.hpp:
 

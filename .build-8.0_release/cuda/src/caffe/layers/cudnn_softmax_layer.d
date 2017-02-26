@@ -773,6 +773,8 @@
     /usr/include/inttypes.h \
     /usr/include/glog/log_severity.h \
     /usr/include/glog/vlog_is_on.h \
+    /home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h \
+    /home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h \
     /usr/include/c++/5.1.1/climits \
     /usr/include/c++/5.1.1/fstream \
     /usr/include/c++/5.1.1/bits/codecvt.h \
