@@ -4,8 +4,9 @@ import subprocess
 import re
 
 
-caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
+#caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
 #caffebin='/home/dl/caffe-openblas/build/tools/caffe'
+#caffebin='/home/comp/csshshi/caffe-optimized/build-8.0/tools/caffe'
 #caffebin='/home/shshi/repos/caffe-optimized/build-8.0/tools/caffe'
 #caffebin='/home/shshi/repos/caffe-tnn/build-8.0/tools/caffe'
 #caffebin='/home/shshi/repos/caffe/build-8.0/tools/caffe'
@@ -13,17 +14,17 @@ caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
 
 #config_file_home='/home/dl/caffe-hkbu-lr/benchmarks/2_layer'
 #config_file_home='/home/shshi/repos/caffe-optimized/benchmarks/2_layer'
-config_file_home='/home/dl/caffe-hkbu-lr/benchmarks'
+#config_file_home='/home/dl/caffe-hkbu-lr/benchmarks'
 default_gpu_id=0
 #default_gpu_id=1
 caffebin='/home/comp/csshshi/caffe-optimized/build-8.0/tools/caffe'
-#caffebin='/home/dl/caffe-openblas/build/tools/caffe'
+#caffebin='/home/comp/csshshi/caffe-openblas/build/tools/caffe'
 #caffebin='caffe'
 config_file_home='/home/comp/csshshi/caffe-optimized/benchmarks/2_layer'
 #config_file_home='/home/comp/csshshi/caffe-optimized/benchmarks'
 
 #default_gpu_id=0
-default_gpu_id=1
+#default_gpu_id=1
 
 
 def get_average_time(filename):
@@ -51,7 +52,7 @@ def execute(config_file):
 if __name__ == '__main__':
     #hiddens = [[4096, 4096], [128, 1024]]
     hiddens = [[4096, 4096]]
-    batches = [128, 256, 512, 1024, 2048]
+    batches = [256, 512, 1024, 2048, 4096]
     #batches = [1024, 2048, 4096, 8192, 16384, 16384*2]
     for hidden in hiddens:
         h1 = hidden[0]
