@@ -4,6 +4,7 @@ import subprocess
 import re
 
 REPOS_HOME='/home/shshi/repos/caffe-optimized'
+#REPOS_HOME='/home/shshi/repos/caffe'
 caffebin=REPOS_HOME+'/build-8.0/tools/caffe'
 #caffebin='/home/dl/caffe-openblas/build/tools/caffe'
 #caffebin='/home/dl/caffe-hkbu/build-8.0/tools/caffe'
@@ -29,7 +30,7 @@ def execute(config_file):
     logfile = '%s.log'%config_file
     cmd = '%s time -model=%s/%s -gpu=%d -iterations=16>&%s'%(caffebin, config_file_home, config_file, default_gpu_id, logfile)
     #print cmd
-    #os.system(cmd)
+    os.system(cmd)
     process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
     process.wait()
     ms = get_average_time(logfile)
@@ -38,7 +39,7 @@ def execute(config_file):
 if __name__ == '__main__':
     #hiddens = [[4096, 4096], [128, 1024]]
     hiddens = [[4096, 4096]]
-    batches = [128, 256, 512, 1024, 2048]
+    batches = [256, 512, 1024, 2048, 4096]
     #batches = [1024, 2048, 4096, 8192, 16384, 16384*2]
     for hidden in hiddens:
         h1 = hidden[0]

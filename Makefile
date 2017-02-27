@@ -171,14 +171,14 @@ ifneq ("$(wildcard $(CUDA_DIR)/lib64)","")
 endif
 CUDA_LIB_DIR += $(CUDA_DIR)/lib
 
-INCLUDE_DIRS += $(BUILD_INCLUDE_DIR) ./src ./include
+INCLUDE_DIRS += $(BUILD_INCLUDE_DIR) ./src ./include /home/comp/csshshi/local/openblas/include
 ifneq ($(CPU_ONLY), 1)
 	INCLUDE_DIRS += $(CUDA_INCLUDE_DIR)
 	LIBRARY_DIRS += $(CUDA_LIB_DIR)
 	LIBRARIES := cudart cublas curand
 endif
 
-LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5 svm xgboost
+LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5 svm openblas xgboost
 
 # handle IO dependencies
 USE_LEVELDB ?= 1
@@ -370,6 +370,8 @@ ifeq ($(BLAS), mkl)
 else ifeq ($(BLAS), open)
 	# OpenBLAS
 	LIBRARIES += openblas
+	BLAS_INCLUDE ?= /usr/local/include
+	BLAS_LIB ?= /usr/local/lib
 else
 	# ATLAS
 	ifeq ($(LINUX), 1)
@@ -394,6 +396,7 @@ else
 endif
 INCLUDE_DIRS += $(BLAS_INCLUDE)
 LIBRARY_DIRS += $(BLAS_LIB)
+LIBRARY_DIRS += /home/comp/csshshi/local/openblas/lib 
 
 LIBRARY_DIRS += $(LIB_BUILD_DIR)
 
@@ -410,7 +413,7 @@ LINKFLAGS += -pthread -fPIC $(COMMON_FLAGS) $(WARNINGS)
 
 USE_PKG_CONFIG ?= 0
 ifeq ($(USE_PKG_CONFIG), 1)
-	PKG_CONFIG := $(shell pkg-config opencv --libs)
+	PKG_CONFIG := #$(shell pkg-config opencv --libs)
 else
 	PKG_CONFIG :=
 endif
