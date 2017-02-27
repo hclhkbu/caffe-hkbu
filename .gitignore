@@ -94,3 +94,6 @@ LOCK
 LOG*
 CURRENT
 MANIFEST-*
+
+# Logs
+*.log
