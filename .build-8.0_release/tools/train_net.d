@@ -1,12 +1,7 @@
 .build-8.0_release/tools/train_net.o: tools/train_net.cpp \
  include/caffe/caffe.hpp include/caffe/blob.hpp include/caffe/common.hpp \
-<<<<<<< HEAD
  /home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h \
  /home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h \
-=======
- /home/shshi/downloads/xgboost/include/xgboost/c_api.h \
- /home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
  include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
@@ -35,15 +30,13 @@
  .build-8.0_release/src/caffe/proto/caffe.pb.h \
  include/caffe/syncedmem.hpp include/caffe/filler.hpp \
  include/caffe/util/math_functions.hpp \
- include/caffe/util/mkl_alternate.hpp \
- /home/shshi/local/openblas/include/cblas.h \
- /home/shshi/local/openblas/include/openblas_config.h \
- include/caffe/layer.hpp include/caffe/layer_factory.hpp \
- include/caffe/net.hpp include/caffe/parallel.hpp \
- include/caffe/internal_thread.hpp include/caffe/solver.hpp \
- include/caffe/solver_factory.hpp include/caffe/util/blocking_queue.hpp \
- include/caffe/util/benchmark.hpp include/caffe/util/io.hpp \
- include/caffe/util/format.hpp include/caffe/util/upgrade_proto.hpp
+ include/caffe/util/mkl_alternate.hpp include/caffe/layer.hpp \
+ include/caffe/layer_factory.hpp include/caffe/net.hpp \
+ include/caffe/parallel.hpp include/caffe/internal_thread.hpp \
+ include/caffe/solver.hpp include/caffe/solver_factory.hpp \
+ include/caffe/util/blocking_queue.hpp include/caffe/util/benchmark.hpp \
+ include/caffe/util/io.hpp include/caffe/util/format.hpp \
+ include/caffe/util/upgrade_proto.hpp
 
 include/caffe/caffe.hpp:
 
@@ -51,15 +44,9 @@ include/caffe/blob.hpp:
 
 include/caffe/common.hpp:
 
-<<<<<<< HEAD
 /home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h:
 
 /home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h:
-=======
-/home/shshi/downloads/xgboost/include/xgboost/c_api.h:
-
-/home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h:
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
 
 include/caffe/util/device_alternate.hpp:
 
@@ -122,10 +109,6 @@ include/caffe/filler.hpp:
 include/caffe/util/math_functions.hpp:
 
 include/caffe/util/mkl_alternate.hpp:
-
-/home/shshi/local/openblas/include/cblas.h:
-
-/home/shshi/local/openblas/include/openblas_config.h:
 
 include/caffe/layer.hpp:
 

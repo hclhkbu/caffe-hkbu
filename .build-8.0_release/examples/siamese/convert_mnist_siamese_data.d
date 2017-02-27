@@ -3,13 +3,8 @@
  .build-8.0_release/src/caffe/proto/caffe.pb.h \
  include/caffe/util/format.hpp include/caffe/util/math_functions.hpp \
  include/caffe/common.hpp \
-<<<<<<< HEAD
  /home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h \
  /home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h \
-=======
- /home/shshi/downloads/xgboost/include/xgboost/c_api.h \
- /home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
  include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
@@ -34,13 +29,7 @@
  /usr/local/cuda-8.0/include/vector_functions.hpp \
  /usr/local/cuda-8.0/include/curand.h \
  /usr/local/cuda-8.0/include/driver_types.h include/caffe/util/cudnn.hpp \
-<<<<<<< HEAD
  /usr/local/cuda-8.0/include/cudnn.h include/caffe/util/mkl_alternate.hpp
-=======
- /usr/local/cuda-8.0/include/cudnn.h include/caffe/util/mkl_alternate.hpp \
- /home/shshi/local/openblas/include/cblas.h \
- /home/shshi/local/openblas/include/openblas_config.h
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
 
 .build-8.0_release/src/caffe/proto/caffe.pb.h:
 
@@ -50,15 +39,9 @@ include/caffe/util/math_functions.hpp:
 
 include/caffe/common.hpp:
 
-<<<<<<< HEAD
 /home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h:
 
 /home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h:
-=======
-/home/shshi/downloads/xgboost/include/xgboost/c_api.h:
-
-/home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h:
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
 
 include/caffe/util/device_alternate.hpp:
 
@@ -113,7 +96,3 @@ include/caffe/util/cudnn.hpp:
 /usr/local/cuda-8.0/include/cudnn.h:
 
 include/caffe/util/mkl_alternate.hpp:
-
-/home/shshi/local/openblas/include/cblas.h:
-
-/home/shshi/local/openblas/include/openblas_config.h:

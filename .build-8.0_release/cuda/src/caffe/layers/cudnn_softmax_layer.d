@@ -11,13 +11,8 @@
     /usr/local/cuda-8.0/include/device_types.h \
     /usr/local/cuda-8.0/include/host_defines.h \
     /usr/local/cuda-8.0/include/driver_types.h \
-<<<<<<< HEAD
     /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/limits.h \
     /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/syslimits.h \
-=======
-    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h \
-    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/limits.h \
     /usr/include/bits/posix1_lim.h \
     /usr/include/bits/local_lim.h \
@@ -25,11 +20,7 @@
     /usr/include/bits/posix2_lim.h \
     /usr/include/bits/xopen_lim.h \
     /usr/include/bits/stdio_lim.h \
-<<<<<<< HEAD
     /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/stddef.h \
-=======
-    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/surface_types.h \
     /usr/local/cuda-8.0/include/texture_types.h \
     /usr/local/cuda-8.0/include/vector_types.h \
@@ -48,30 +39,17 @@
     /usr/include/bits/types.h \
     /usr/include/bits/typesizes.h \
     /usr/include/bits/timex.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/new \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/c++config.h \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/os_defines.h \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/cpu_defines.h \
     /usr/include/c++/5.1.1/exception \
     /usr/include/c++/5.1.1/bits/atomic_lockfree_defines.h \
-=======
-    /usr/include/c++/4.8.2/new \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h \
-    /usr/include/c++/4.8.2/exception \
-    /usr/include/c++/4.8.2/bits/atomic_lockfree_defines.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/stdio.h \
     /usr/include/libio.h \
     /usr/include/_G_config.h \
     /usr/include/wchar.h \
-<<<<<<< HEAD
     /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/stdarg.h \
-=======
-    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/bits/sys_errlist.h \
     /usr/include/bits/stdio.h \
     /usr/include/stdlib.h \
@@ -88,19 +66,13 @@
     /usr/include/sys/sysmacros.h \
     /usr/include/bits/pthreadtypes.h \
     /usr/include/alloca.h \
-<<<<<<< HEAD
     /usr/include/bits/stdlib-bsearch.h \
-=======
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/bits/stdlib-float.h \
     /usr/include/assert.h \
     /usr/local/cuda-8.0/include/math_functions.h \
     /usr/include/math.h \
-<<<<<<< HEAD
     /usr/include/bits/math-vector.h \
     /usr/include/bits/libm-simd-decl-stubs.h \
-=======
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/bits/huge_val.h \
     /usr/include/bits/huge_valf.h \
     /usr/include/bits/huge_vall.h \
@@ -109,17 +81,10 @@
     /usr/include/bits/mathdef.h \
     /usr/include/bits/mathcalls.h \
     /usr/include/bits/mathinline.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/cmath \
     /usr/include/c++/5.1.1/bits/cpp_type_traits.h \
     /usr/include/c++/5.1.1/ext/type_traits.h \
     /usr/include/c++/5.1.1/cstdlib \
-=======
-    /usr/include/c++/4.8.2/cmath \
-    /usr/include/c++/4.8.2/bits/cpp_type_traits.h \
-    /usr/include/c++/4.8.2/ext/type_traits.h \
-    /usr/include/c++/4.8.2/cstdlib \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/math_functions.hpp \
     /usr/local/cuda-8.0/include/math_functions_dbl_ptx3.h \
     /usr/local/cuda-8.0/include/math_functions_dbl_ptx3.hpp \
@@ -152,7 +117,6 @@
     /usr/local/cuda-8.0/include/texture_indirect_functions.h \
     /usr/local/cuda-8.0/include/surface_indirect_functions.h \
     /usr/local/cuda-8.0/include/device_launch_parameters.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/vector \
     /usr/include/c++/5.1.1/bits/stl_algobase.h \
     /usr/include/c++/5.1.1/bits/functexcept.h \
@@ -178,42 +142,13 @@
     /usr/include/c++/5.1.1/bits/stl_bvector.h \
     /usr/include/c++/5.1.1/bits/range_access.h \
     /usr/include/c++/5.1.1/bits/vector.tcc \
-=======
-    /usr/include/c++/4.8.2/vector \
-    /usr/include/c++/4.8.2/bits/stl_algobase.h \
-    /usr/include/c++/4.8.2/bits/functexcept.h \
-    /usr/include/c++/4.8.2/bits/exception_defines.h \
-    /usr/include/c++/4.8.2/ext/numeric_traits.h \
-    /usr/include/c++/4.8.2/bits/stl_pair.h \
-    /usr/include/c++/4.8.2/bits/move.h \
-    /usr/include/c++/4.8.2/bits/concept_check.h \
-    /usr/include/c++/4.8.2/bits/stl_iterator_base_types.h \
-    /usr/include/c++/4.8.2/bits/stl_iterator_base_funcs.h \
-    /usr/include/c++/4.8.2/debug/debug.h \
-    /usr/include/c++/4.8.2/bits/stl_iterator.h \
-    /usr/include/c++/4.8.2/bits/allocator.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++allocator.h \
-    /usr/include/c++/4.8.2/ext/new_allocator.h \
-    /usr/include/c++/4.8.2/bits/memoryfwd.h \
-    /usr/include/c++/4.8.2/bits/stl_construct.h \
-    /usr/include/c++/4.8.2/ext/alloc_traits.h \
-    /usr/include/c++/4.8.2/bits/stl_uninitialized.h \
-    /usr/include/c++/4.8.2/bits/stl_vector.h \
-    /usr/include/c++/4.8.2/bits/stl_bvector.h \
-    /usr/include/c++/4.8.2/bits/range_access.h \
-    /usr/include/c++/4.8.2/bits/vector.tcc \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/thrust/device_vector.h \
     /usr/local/cuda-8.0/include/thrust/detail/config.h \
     /usr/local/cuda-8.0/include/thrust/detail/config/config.h \
     /usr/local/cuda-8.0/include/thrust/detail/config/simple_defines.h \
     /usr/local/cuda-8.0/include/thrust/detail/config/compiler.h \
     /usr/local/cuda-8.0/include/cuda.h \
-<<<<<<< HEAD
     /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/stdint.h \
-=======
-    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/stdint.h \
     /usr/include/bits/wchar.h \
     /usr/local/cuda-8.0/include/thrust/detail/config/host_system.h \
@@ -233,7 +168,6 @@
     /usr/local/cuda-8.0/include/thrust/detail/type_traits/is_metafunction_defined.h \
     /usr/local/cuda-8.0/include/thrust/detail/type_traits/has_nested_type.h \
     /usr/local/cuda-8.0/include/thrust/iterator/iterator_traits.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/iterator \
     /usr/include/c++/5.1.1/ostream \
     /usr/include/c++/5.1.1/ios \
@@ -253,32 +187,10 @@
     /usr/include/c++/5.1.1/ext/atomicity.h \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/gthr.h \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/gthr-default.h \
-=======
-    /usr/include/c++/4.8.2/iterator \
-    /usr/include/c++/4.8.2/ostream \
-    /usr/include/c++/4.8.2/ios \
-    /usr/include/c++/4.8.2/iosfwd \
-    /usr/include/c++/4.8.2/bits/stringfwd.h \
-    /usr/include/c++/4.8.2/bits/postypes.h \
-    /usr/include/c++/4.8.2/cwchar \
-    /usr/include/c++/4.8.2/bits/char_traits.h \
-    /usr/include/c++/4.8.2/bits/localefwd.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h \
-    /usr/include/c++/4.8.2/clocale \
-    /usr/include/locale.h \
-    /usr/include/bits/locale.h \
-    /usr/include/c++/4.8.2/cctype \
-    /usr/include/ctype.h \
-    /usr/include/c++/4.8.2/bits/ios_base.h \
-    /usr/include/c++/4.8.2/ext/atomicity.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr-default.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/pthread.h \
     /usr/include/sched.h \
     /usr/include/bits/sched.h \
     /usr/include/bits/setjmp.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/atomic_word.h \
     /usr/include/c++/5.1.1/bits/locale_classes.h \
     /usr/include/c++/5.1.1/string \
@@ -305,33 +217,6 @@
     /usr/include/c++/5.1.1/istream \
     /usr/include/c++/5.1.1/bits/istream.tcc \
     /usr/include/c++/5.1.1/bits/stream_iterator.h \
-=======
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/atomic_word.h \
-    /usr/include/c++/4.8.2/bits/locale_classes.h \
-    /usr/include/c++/4.8.2/string \
-    /usr/include/c++/4.8.2/bits/ostream_insert.h \
-    /usr/include/c++/4.8.2/bits/cxxabi_forced.h \
-    /usr/include/c++/4.8.2/bits/stl_function.h \
-    /usr/include/c++/4.8.2/backward/binders.h \
-    /usr/include/c++/4.8.2/bits/basic_string.h \
-    /usr/include/c++/4.8.2/bits/basic_string.tcc \
-    /usr/include/c++/4.8.2/bits/locale_classes.tcc \
-    /usr/include/c++/4.8.2/streambuf \
-    /usr/include/c++/4.8.2/bits/streambuf.tcc \
-    /usr/include/c++/4.8.2/bits/basic_ios.h \
-    /usr/include/c++/4.8.2/bits/locale_facets.h \
-    /usr/include/c++/4.8.2/cwctype \
-    /usr/include/wctype.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_base.h \
-    /usr/include/c++/4.8.2/bits/streambuf_iterator.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_inline.h \
-    /usr/include/c++/4.8.2/bits/locale_facets.tcc \
-    /usr/include/c++/4.8.2/bits/basic_ios.tcc \
-    /usr/include/c++/4.8.2/bits/ostream.tcc \
-    /usr/include/c++/4.8.2/istream \
-    /usr/include/c++/4.8.2/bits/istream.tcc \
-    /usr/include/c++/4.8.2/bits/stream_iterator.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/thrust/iterator/detail/iterator_traversal_tags.h \
     /usr/local/cuda-8.0/include/thrust/iterator/detail/host_system_tag.h \
     /usr/local/cuda-8.0/include/thrust/system/cpp/detail/execution_policy.h \
@@ -346,11 +231,7 @@
     /usr/local/cuda-8.0/include/thrust/iterator/detail/universal_categories.h \
     /usr/local/cuda-8.0/include/thrust/iterator/detail/iterator_category_to_traversal.h \
     /usr/local/cuda-8.0/include/thrust/iterator/detail/iterator_category_to_system.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/cstddef \
-=======
-    /usr/include/c++/4.8.2/cstddef \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/thrust/detail/pointer.h \
     /usr/local/cuda-8.0/include/thrust/iterator/iterator_adaptor.h \
     /usr/local/cuda-8.0/include/thrust/iterator/iterator_facade.h \
@@ -370,13 +251,8 @@
     /usr/local/cuda-8.0/include/thrust/system/detail/generic/memory.h \
     /usr/local/cuda-8.0/include/thrust/system/detail/generic/tag.h \
     /usr/local/cuda-8.0/include/thrust/pair.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/utility \
     /usr/include/c++/5.1.1/bits/stl_relops.h \
-=======
-    /usr/include/c++/4.8.2/utility \
-    /usr/include/c++/4.8.2/bits/stl_relops.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/thrust/detail/pair.inl \
     /usr/local/cuda-8.0/include/thrust/detail/swap.h \
     /usr/local/cuda-8.0/include/thrust/system/detail/generic/memory.inl \
@@ -387,22 +263,12 @@
     /usr/local/cuda-8.0/include/thrust/system/cuda/detail/malloc_and_free.h \
     /usr/local/cuda-8.0/include/thrust/system/cuda/detail/guarded_cuda_runtime_api.h \
     /usr/local/cuda-8.0/include/thrust/system/system_error.h \
-<<<<<<< HEAD
     /usr/local/cuda-8.0/include/thrust/system/error_code.h \
     /usr/local/cuda-8.0/include/thrust/system/detail/errno.h \
     /usr/include/c++/5.1.1/iostream \
     /usr/local/cuda-8.0/include/thrust/system/detail/error_category.inl \
     /usr/local/cuda-8.0/include/thrust/functional.h \
     /usr/include/c++/5.1.1/functional \
-=======
-    /usr/include/c++/4.8.2/stdexcept \
-    /usr/local/cuda-8.0/include/thrust/system/error_code.h \
-    /usr/local/cuda-8.0/include/thrust/system/detail/errno.h \
-    /usr/include/c++/4.8.2/iostream \
-    /usr/local/cuda-8.0/include/thrust/system/detail/error_category.inl \
-    /usr/local/cuda-8.0/include/thrust/functional.h \
-    /usr/include/c++/4.8.2/functional \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/thrust/detail/functional/placeholder.h \
     /usr/local/cuda-8.0/include/thrust/detail/functional/actor.h \
     /usr/local/cuda-8.0/include/thrust/tuple.h \
@@ -422,11 +288,7 @@
     /usr/local/cuda-8.0/include/thrust/detail/functional/operators/logical_operators.h \
     /usr/local/cuda-8.0/include/thrust/detail/functional/operators/bitwise_operators.h \
     /usr/local/cuda-8.0/include/thrust/detail/functional/operators/compound_assignment_operators.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/cstring \
-=======
-    /usr/include/c++/4.8.2/cstring \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/thrust/system/detail/error_code.inl \
     /usr/local/cuda-8.0/include/thrust/system/detail/error_condition.inl \
     /usr/local/cuda-8.0/include/thrust/system/detail/system_error.inl \
@@ -444,11 +306,7 @@
     /usr/local/cuda-8.0/include/thrust/system/cuda/detail/bulk/detail/guarded_cuda_runtime_api.hpp \
     /usr/local/cuda-8.0/include/thrust/system/cuda/detail/bulk/detail/throw_on_error.hpp \
     /usr/local/cuda-8.0/include/thrust/system/cuda/detail/bulk/detail/terminate.hpp \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/cstdio \
-=======
-    /usr/include/c++/4.8.2/cstdio \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/thrust/system_error.h \
     /usr/local/cuda-8.0/include/thrust/system/cuda/detail/bulk/detail/cuda_launcher/runtime_introspection.hpp \
     /usr/local/cuda-8.0/include/thrust/system/cuda/detail/bulk/detail/cuda_launcher/cuda_launch_config.hpp \
@@ -490,11 +348,7 @@
     /usr/local/cuda-8.0/include/thrust/iterator/counting_iterator.h \
     /usr/local/cuda-8.0/include/thrust/iterator/detail/counting_iterator.inl \
     /usr/local/cuda-8.0/include/thrust/detail/numeric_traits.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/limits \
-=======
-    /usr/include/c++/4.8.2/limits \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/thrust/iterator/detail/join_iterator.h \
     /usr/local/cuda-8.0/include/thrust/system/cuda/detail/bulk/algorithm/scatter.hpp \
     /usr/local/cuda-8.0/include/thrust/system/cuda/detail/bulk/algorithm/adjacent_difference.hpp \
@@ -533,17 +387,10 @@
     /usr/local/cuda-8.0/include/thrust/system/detail/generic/copy.inl \
     /usr/local/cuda-8.0/include/thrust/detail/internal_functional.h \
     /usr/local/cuda-8.0/include/thrust/detail/raw_reference_cast.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/memory \
     /usr/include/c++/5.1.1/bits/stl_tempbuf.h \
     /usr/include/c++/5.1.1/bits/stl_raw_storage_iter.h \
     /usr/include/c++/5.1.1/backward/auto_ptr.h \
-=======
-    /usr/include/c++/4.8.2/memory \
-    /usr/include/c++/4.8.2/bits/stl_tempbuf.h \
-    /usr/include/c++/4.8.2/bits/stl_raw_storage_iter.h \
-    /usr/include/c++/4.8.2/backward/auto_ptr.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/thrust/transform.h \
     /usr/local/cuda-8.0/include/thrust/detail/transform.inl \
     /usr/local/cuda-8.0/include/thrust/system/detail/generic/transform.h \
@@ -624,11 +471,7 @@
     /usr/local/cuda-8.0/include/thrust/system/detail/adl/temporary_buffer.h \
     /usr/local/cuda-8.0/include/thrust/system/detail/sequential/temporary_buffer.h \
     /usr/local/cuda-8.0/include/thrust/detail/allocator/temporary_allocator.inl \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/cassert \
-=======
-    /usr/include/c++/4.8.2/cassert \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/thrust/system/cuda/detail/terminate.h \
     /usr/local/cuda-8.0/include/thrust/detail/allocator/no_throw_allocator.h \
     /usr/local/cuda-8.0/include/thrust/detail/temporary_array.inl \
@@ -740,17 +583,10 @@
     /usr/local/cuda-8.0/include/thrust/detail/host_vector.inl \
     ./include/caffe/layers/cudnn_softmax_layer.hpp \
     ./include/caffe/blob.hpp \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/algorithm \
     /usr/include/c++/5.1.1/bits/stl_algo.h \
     /usr/include/c++/5.1.1/bits/algorithmfwd.h \
     /usr/include/c++/5.1.1/bits/stl_heap.h \
-=======
-    /usr/include/c++/4.8.2/algorithm \
-    /usr/include/c++/4.8.2/bits/stl_algo.h \
-    /usr/include/c++/4.8.2/bits/algorithmfwd.h \
-    /usr/include/c++/4.8.2/bits/stl_heap.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     ./include/caffe/common.hpp \
     /usr/local/include/boost/shared_ptr.hpp \
     /usr/local/include/boost/smart_ptr/shared_ptr.hpp \
@@ -786,15 +622,9 @@
     /usr/local/include/boost/detail/sp_typeinfo.hpp \
     /usr/local/include/boost/core/typeinfo.hpp \
     /usr/local/include/boost/core/demangle.hpp \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/cxxabi.h \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/cxxabi_tweaks.h \
     /usr/include/c++/5.1.1/typeinfo \
-=======
-    /usr/include/c++/4.8.2/cxxabi.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cxxabi_tweaks.h \
-    /usr/include/c++/4.8.2/typeinfo \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
     /usr/local/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
     /usr/local/include/boost/core/addressof.hpp \
@@ -938,7 +768,6 @@
     /usr/include/asm/errno.h \
     /usr/include/asm-generic/errno.h \
     /usr/include/asm-generic/errno-base.h \
-<<<<<<< HEAD
     /usr/include/c++/5.1.1/sstream \
     /usr/include/c++/5.1.1/bits/sstream.tcc \
     /usr/include/inttypes.h \
@@ -959,28 +788,6 @@
     /usr/include/c++/5.1.1/set \
     /usr/include/c++/5.1.1/bits/stl_set.h \
     /usr/include/c++/5.1.1/bits/stl_multiset.h \
-=======
-    /usr/include/c++/4.8.2/sstream \
-    /usr/include/c++/4.8.2/bits/sstream.tcc \
-    /usr/include/inttypes.h \
-    /usr/include/glog/log_severity.h \
-    /usr/include/glog/vlog_is_on.h \
-    /home/shshi/downloads/xgboost/include/xgboost/c_api.h \
-    /home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h \
-    /usr/include/c++/4.8.2/climits \
-    /usr/include/c++/4.8.2/fstream \
-    /usr/include/c++/4.8.2/bits/codecvt.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
-    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h \
-    /usr/include/c++/4.8.2/bits/fstream.tcc \
-    /usr/include/c++/4.8.2/map \
-    /usr/include/c++/4.8.2/bits/stl_tree.h \
-    /usr/include/c++/4.8.2/bits/stl_map.h \
-    /usr/include/c++/4.8.2/bits/stl_multimap.h \
-    /usr/include/c++/4.8.2/set \
-    /usr/include/c++/4.8.2/bits/stl_set.h \
-    /usr/include/c++/4.8.2/bits/stl_multiset.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     ./include/caffe/util/device_alternate.hpp \
     /usr/local/cuda-8.0/include/cublas_v2.h \
     /usr/local/cuda-8.0/include/cublas_api.h \
@@ -990,7 +797,6 @@
     ./include/caffe/util/cudnn.hpp \
     /usr/local/cuda-8.0/include/cudnn.h \
     .build-8.0_release/src/caffe/proto/caffe.pb.h \
-<<<<<<< HEAD
     /usr/include/google/protobuf/stubs/common.h \
     /usr/include/google/protobuf/generated_message_util.h \
     /usr/include/google/protobuf/stubs/once.h \
@@ -1006,35 +812,11 @@
     /usr/include/google/protobuf/extension_set.h \
     /usr/include/google/protobuf/generated_enum_reflection.h \
     /usr/include/google/protobuf/unknown_field_set.h \
-=======
-    /usr/local/include/google/protobuf/stubs/common.h \
-    /usr/local/include/google/protobuf/generated_message_util.h \
-    /usr/local/include/google/protobuf/repeated_field.h \
-    /usr/local/include/google/protobuf/message_lite.h \
-    /usr/local/include/google/protobuf/io/coded_stream.h \
-    /usr/include/sys/param.h \
-    /usr/include/signal.h \
-    /usr/include/bits/signum.h \
-    /usr/include/bits/siginfo.h \
-    /usr/include/bits/sigaction.h \
-    /usr/include/bits/sigcontext.h \
-    /usr/include/bits/sigstack.h \
-    /usr/include/sys/ucontext.h \
-    /usr/include/bits/sigthread.h \
-    /usr/include/bits/param.h \
-    /usr/include/linux/param.h \
-    /usr/include/asm/param.h \
-    /usr/include/asm-generic/param.h \
-    /usr/local/include/google/protobuf/extension_set.h \
-    /usr/local/include/google/protobuf/generated_message_reflection.h \
-    /usr/local/include/google/protobuf/message.h \
-    /usr/local/include/google/protobuf/unknown_field_set.h \
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     ./include/caffe/syncedmem.hpp \
     ./include/caffe/layer.hpp \
     ./include/caffe/layer_factory.hpp \
     ./include/caffe/util/math_functions.hpp \
     ./include/caffe/util/mkl_alternate.hpp \
-    /home/shshi/local/openblas/include/cblas.h \
-    /home/shshi/local/openblas/include/openblas_config.h \
+    /usr/local/include/cblas.h \
+    /usr/local/include/openblas_config.h \
     ./include/caffe/layers/softmax_layer.hpp
