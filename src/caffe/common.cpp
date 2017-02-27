@@ -121,19 +121,19 @@ Caffe::Caffe()
       != CURAND_STATUS_SUCCESS) {
     LOG(ERROR) << "Cannot create Curand generator. Curand won't be available.";
   }
-  model_ = svm_load_model("/tmp/gemm.model");
+  //model_ = svm_load_model("/tmp/gemm.model");
   int nNumAttr = 3;
   node_ = (struct svm_node *) malloc(nNumAttr*sizeof(struct svm_node));
   //init xgboost
   LOG(INFO) << "Start to init xgboost ......";
-  int nCols=14, nRows=1;
+  int nCols=11, nRows=1;
   float train[nRows][nCols];
   for (int i=0;i<nRows;i++)
       for (int j=0;j<nCols;j++)
           train[i][j] = (i+1) * (j+1);
   XGDMatrixCreateFromMat((float *) train, nRows, nCols, 0, &(xgTrain_[0]));
   XGBoosterCreate(xgTrain_, 1, &xgBooster_);
-  XGBoosterLoadModel(xgBooster_, "/tmp/xgboostgemm.model");
+  XGBoosterLoadModel(xgBooster_, "/tmp/xgboostgemm2.model");
   XGBoosterSetParam(xgBooster_, "booster", "gbtree");
   XGBoosterSetParam(xgBooster_, "objective", "binary:logistic");
   XGBoosterSetParam(xgBooster_, "max_depth", "16");
@@ -147,17 +147,18 @@ Caffe::Caffe()
   xgSampleFeatures_[0][1] = prop.minor;
   xgSampleFeatures_[0][2] = prop.totalGlobalMem;
   xgSampleFeatures_[0][3] = prop.multiProcessorCount;
-  xgSampleFeatures_[0][4] = prop.memoryClockRate;
-  xgSampleFeatures_[0][5] = prop.memoryBusWidth;
-  xgSampleFeatures_[0][6] = prop.l2CacheSize;
-  xgSampleFeatures_[0][7] = prop.sharedMemPerBlock;
-  xgSampleFeatures_[0][8] = prop.totalConstMem;
-  xgSampleFeatures_[0][9] = prop.regsPerBlock;
+  xgSampleFeatures_[0][4] = prop.clockRate;
+  xgSampleFeatures_[0][5] = prop.memoryClockRate;
+  xgSampleFeatures_[0][6] = prop.memoryBusWidth;
+  xgSampleFeatures_[0][7] = prop.l2CacheSize;
+  //xgSampleFeatures_[0][7] = prop.sharedMemPerBlock;
+  //xgSampleFeatures_[0][8] = prop.totalConstMem;
+  //xgSampleFeatures_[0][9] = prop.regsPerBlock;
 
   bst_ulong out_len;
   const float *f;
   DMatrixHandle xgTestSample;
-  XGDMatrixCreateFromMat((float *) train, 1, 14, -1, &xgTestSample);
+  XGDMatrixCreateFromMat((float *) train, 1, 11, -1, &xgTestSample);
   XGBoosterPredict(xgBooster_, xgTestSample, 0,0,&out_len,&f);
   LOG(INFO) << "Init xgboost finished!"; 
 }
@@ -221,12 +222,10 @@ void Caffe::SetDevice(const int device_id) {
   Get().xgSampleFeatures_[0][1] = prop.minor;
   Get().xgSampleFeatures_[0][2] = prop.totalGlobalMem;
   Get().xgSampleFeatures_[0][3] = prop.multiProcessorCount;
-  Get().xgSampleFeatures_[0][4] = prop.memoryClockRate;
-  Get().xgSampleFeatures_[0][5] = prop.memoryBusWidth;
-  Get().xgSampleFeatures_[0][6] = prop.l2CacheSize;
-  Get().xgSampleFeatures_[0][7] = prop.sharedMemPerBlock;
-  Get().xgSampleFeatures_[0][8] = prop.totalConstMem;
-  Get().xgSampleFeatures_[0][9] = prop.regsPerBlock;
+  Get().xgSampleFeatures_[0][4] = prop.clockRate;
+  Get().xgSampleFeatures_[0][5] = prop.memoryClockRate;
+  Get().xgSampleFeatures_[0][6] = prop.memoryBusWidth;
+  Get().xgSampleFeatures_[0][7] = prop.l2CacheSize;
   LOG(INFO) << "Set device properties finished";
 }
 
@@ -271,10 +270,6 @@ void Caffe::DeviceQuery() {
   Get().xgSampleFeatures_[0][5] = prop.memoryClockRate;
   Get().xgSampleFeatures_[0][6] = prop.memoryBusWidth;
   Get().xgSampleFeatures_[0][7] = prop.l2CacheSize;
-  Get().xgSampleFeatures_[0][8] = prop.sharedMemPerBlock;
-  Get().xgSampleFeatures_[0][9] = prop.totalConstMem;
-  Get().xgSampleFeatures_[0][10] = prop.regsPerBlock;
-
   return;
 }
 
@@ -326,11 +321,11 @@ double Caffe::predict(size_t nWA, size_t nHA, size_t nHB) {
 
 double Caffe::xgPredict(size_t nWA, size_t nHA, size_t nHB) {
   //LOG(INFO) << "Start to predict ";
-  Get().xgSampleFeatures_[0][11] = nHA;
-  Get().xgSampleFeatures_[0][12] = nHB;
-  Get().xgSampleFeatures_[0][13] = nWA;
+  Get().xgSampleFeatures_[0][8] = nHA;
+  Get().xgSampleFeatures_[0][9] = nHB;
+  Get().xgSampleFeatures_[0][10] = nWA;
   DMatrixHandle xgTestSample;
-  XGDMatrixCreateFromMat((float *) Get().xgSampleFeatures_, 1, 14, -1, &xgTestSample);
+  XGDMatrixCreateFromMat((float *) Get().xgSampleFeatures_, 1, 11, -1, &xgTestSample);
   //LOG(INFO) << "Create matrix finished:      ";
   bst_ulong out_len;
   const float *f;

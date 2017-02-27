@@ -3,14 +3,14 @@ import sys,os,time
 import subprocess
 import re
 
-#caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
-caffebin='/home/dl/caffe-openblas/build/tools/caffe'
+caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
+#caffebin='/home/dl/caffe-openblas/build/tools/caffe'
 #caffebin='/home/dl/caffe-hkbu/build-8.0/tools/caffe'
 
-#config_file_home='/home/dl/caffe-hkbu-lr/benchmarks/2_layer'
-config_file_home='/home/dl/caffe-hkbu-lr/benchmarks'
-default_gpu_id=0
-#default_gpu_id=1
+config_file_home='/home/dl/caffe-hkbu-lr/benchmarks/2_layer'
+#config_file_home='/home/dl/caffe-hkbu-lr/benchmarks'
+#default_gpu_id=0
+default_gpu_id=1
 
 def get_average_time(filename):
     file = open(filename, "r")
@@ -37,17 +37,17 @@ def execute(config_file):
 if __name__ == '__main__':
     #hiddens = [[4096, 4096], [128, 1024]]
     hiddens = [[4096, 4096]]
-    #batches = [128, 256, 512, 1024, 2048]
-    batches = [1024, 2048, 4096, 8192, 16384, 16384*2]
+    batches = [128, 256, 512, 1024, 2048]
+    #batches = [1024, 2048, 4096, 8192, 16384, 16384*2]
     for hidden in hiddens:
         h1 = hidden[0]
         h2 = hidden[1]
         for batch in batches:
             # Create prototxt
-            cmd = 'batch_size=%d ./gen-fcn5.sh' % batch
-            process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
-            process.wait()
-            #config_file = '%d-%d-b%d.prototxt' % (h1, h2, batch)
-            config_file = 'fcn5-b%d.prototxt' % batch
+            #cmd = 'batch_size=%d ./gen-fcn5.sh' % batch
+            #process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+            #process.wait()
+            #config_file = 'fcn5-b%d.prototxt' % batch
+            config_file = '%d-%d-b%d.prototxt' % (h1, h2, batch)
             ms = execute(config_file)
             print ','.join([str(batch), str(h1), str(h2), str(ms/1000)])

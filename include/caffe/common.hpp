@@ -178,7 +178,7 @@ class Caffe {
   struct svm_node *node_;
   cudaDeviceProp deviceProp_;
   BoosterHandle xgBooster_;
-  float xgSampleFeatures_[1][14];
+  float xgSampleFeatures_[1][11];
   DMatrixHandle xgTrain_[1];
 #endif
   shared_ptr<RNG> random_generator_;
