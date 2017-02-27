@@ -16,6 +16,15 @@ caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
 config_file_home='/home/dl/caffe-hkbu-lr/benchmarks'
 default_gpu_id=0
 #default_gpu_id=1
+caffebin='/home/comp/csshshi/caffe-optimized/build-8.0/tools/caffe'
+#caffebin='/home/dl/caffe-openblas/build/tools/caffe'
+#caffebin='caffe'
+config_file_home='/home/comp/csshshi/caffe-optimized/benchmarks/2_layer'
+#config_file_home='/home/comp/csshshi/caffe-optimized/benchmarks'
+
+#default_gpu_id=0
+default_gpu_id=1
+
 
 def get_average_time(filename):
     file = open(filename, "r")
@@ -33,7 +42,7 @@ def execute(config_file):
     logfile = '%s.log'%config_file
     cmd = '%s time -model=%s/%s -gpu=%d -iterations=16>&%s'%(caffebin, config_file_home, config_file, default_gpu_id, logfile)
     #print cmd
-    #os.system(cmd)
+    os.system(cmd)
     process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
     process.wait()
     ms = get_average_time(logfile)

@@ -12,7 +12,7 @@ layer {
   }
   data_param: {
     batch_size: 16384 
-    source: "/home/dl/data/caffe/mnist/mnist_train_lmdb"
+    source: "/home/comp/csshshi/data/caffe/mnist/mnist_train_lmdb"
     backend: LMDB
   }
 }
@@ -29,7 +29,7 @@ layer {
     scale: 0.00390625
   }
   data_param {
-    source: "/home/dl/data/caffe/mnist/mnist_test_lmdb"
+    source: "/home/comp/csshshi/data/caffe/mnist/mnist_test_lmdb"
     batch_size: 100
     backend: LMDB
   }

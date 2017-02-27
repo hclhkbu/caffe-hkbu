@@ -1,0 +1,18 @@
+I0227 14:02:57.220898 159077 caffe.cpp:308] Use GPU with device ID 1
+I0227 14:02:57.786764 159077 common.cpp:128] Start to init xgboost ......
+I0227 14:02:57.797987 159077 common.cpp:163] Init xgboost finished!
+I0227 14:02:57.801304 159077 common.cpp:219] Set device properties
+I0227 14:02:57.801321 159077 common.cpp:229] Set device properties finished
+[libprotobuf ERROR google/protobuf/text_format.cc:274] Error parsing text-format caffe.NetParameter: 7:1: Expected identifier.
+F0227 14:02:57.803949 159077 upgrade_proto.cpp:79] Check failed: ReadProtoFromTextFile(param_file, param) Failed to parse NetParameter file: /home/comp/csshshi/caffe-optimized/benchmarks/2_layer/4096-4096-b128.prototxt
+*** Check failure stack trace: ***
+    @     0x7fd6ca634edd  (unknown)
+    @     0x7fd6ca636c50  (unknown)
+    @     0x7fd6ca634ad3  (unknown)
+    @     0x7fd6ca63761e  (unknown)
+    @     0x7fd6d16ff991  caffe::ReadNetParamsFromTextFileOrDie()
+    @     0x7fd6d16a5b73  caffe::Net<>::Net()
+    @           0x40b95a  time()
+    @           0x40716c  main
+    @     0x7fd6c1aee580  __libc_start_main
+    @           0x407919  _start
