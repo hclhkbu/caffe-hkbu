@@ -3,10 +3,12 @@ import sys,os,time
 import subprocess
 import re
 
-#caffebin='/home/comp/csshshi/caffe-optimized/build-8.0/tools/caffe'
+caffebin='/home/comp/csshshi/caffe-optimized/build-8.0/tools/caffe'
 #caffebin='/home/dl/caffe-openblas/build/tools/caffe'
-caffebin='caffe'
+#caffebin='caffe'
 config_file_home='/home/comp/csshshi/caffe-optimized/benchmarks/2_layer'
+config_file_home='/home/comp/csshshi/caffe-optimized/benchmarks'
+
 default_gpu_id=0
 #default_gpu_id=1
 
@@ -38,10 +40,16 @@ if __name__ == '__main__':
     hiddens = [[4096, 4096]]
     #batches = [128, 256, 512, 1024, 2048]
     batches = [1024, 2048, 4096, 8192]
+    batches = [1024, 2048, 4096, 8192, 16384, 16384*2]
     for hidden in hiddens:
         h1 = hidden[0]
         h2 = hidden[1]
         for batch in batches:
-            config_file = '%d-%d-b%d.prototxt' % (h1, h2, batch)
+            # Create prototxt
+            cmd = 'batch_size=%d ./gen-fcn5.sh' % batch
+            process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+            process.wait()
+            #config_file = '%d-%d-b%d.prototxt' % (h1, h2, batch)
+            config_file = 'fcn5-b%d.prototxt' % batch
             ms = execute(config_file)
             print ','.join([str(batch), str(h1), str(h2), str(ms/1000)])
