@@ -1,0 +1,5 @@
+REPOS_HOME='/home/dl/caffe-hkbu-lr'
+CONFIG_FILE_HOME='/home/dl/caffe-hkbu-lr/benchmarks/2_layer'
+
+OPTIMIZED_CAFFE_BIN='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
+ORIGINAL_CAFFE_BIN='/home/dl/caffe-openblas/build/tools/caffe'
