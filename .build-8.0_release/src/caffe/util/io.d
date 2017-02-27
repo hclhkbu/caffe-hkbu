@@ -1,7 +1,12 @@
 .build-8.0_release/src/caffe/util/io.o: src/caffe/util/io.cpp \
  include/caffe/common.hpp \
+<<<<<<< HEAD
  /home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h \
  /home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h \
+=======
+ /home/shshi/downloads/xgboost/include/xgboost/c_api.h \
+ /home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
  include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
@@ -32,9 +37,15 @@
 
 include/caffe/common.hpp:
 
+<<<<<<< HEAD
 /home/comp/csshshi/downloads/xgboost/include/xgboost/c_api.h:
 
 /home/comp/csshshi/downloads/xgboost/rabit/include/rabit/c_api.h:
+=======
+/home/shshi/downloads/xgboost/include/xgboost/c_api.h:
+
+/home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h:
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
 
 include/caffe/util/device_alternate.hpp:
 

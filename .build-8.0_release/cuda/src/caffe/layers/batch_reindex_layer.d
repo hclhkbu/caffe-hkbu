@@ -11,8 +11,13 @@
     /usr/local/cuda-8.0/include/device_types.h \
     /usr/local/cuda-8.0/include/host_defines.h \
     /usr/local/cuda-8.0/include/driver_types.h \
+<<<<<<< HEAD
     /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/limits.h \
     /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/syslimits.h \
+=======
+    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h \
+    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/limits.h \
     /usr/include/bits/posix1_lim.h \
     /usr/include/bits/local_lim.h \
@@ -20,7 +25,11 @@
     /usr/include/bits/posix2_lim.h \
     /usr/include/bits/xopen_lim.h \
     /usr/include/bits/stdio_lim.h \
+<<<<<<< HEAD
     /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/stddef.h \
+=======
+    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/surface_types.h \
     /usr/local/cuda-8.0/include/texture_types.h \
     /usr/local/cuda-8.0/include/vector_types.h \
@@ -39,17 +48,30 @@
     /usr/include/bits/types.h \
     /usr/include/bits/typesizes.h \
     /usr/include/bits/timex.h \
+<<<<<<< HEAD
     /usr/include/c++/5.1.1/new \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/c++config.h \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/os_defines.h \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/cpu_defines.h \
     /usr/include/c++/5.1.1/exception \
     /usr/include/c++/5.1.1/bits/atomic_lockfree_defines.h \
+=======
+    /usr/include/c++/4.8.2/new \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h \
+    /usr/include/c++/4.8.2/exception \
+    /usr/include/c++/4.8.2/bits/atomic_lockfree_defines.h \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/stdio.h \
     /usr/include/libio.h \
     /usr/include/_G_config.h \
     /usr/include/wchar.h \
+<<<<<<< HEAD
     /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/stdarg.h \
+=======
+    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/bits/sys_errlist.h \
     /usr/include/bits/stdio.h \
     /usr/include/stdlib.h \
@@ -66,13 +88,19 @@
     /usr/include/sys/sysmacros.h \
     /usr/include/bits/pthreadtypes.h \
     /usr/include/alloca.h \
+<<<<<<< HEAD
     /usr/include/bits/stdlib-bsearch.h \
+=======
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/bits/stdlib-float.h \
     /usr/include/assert.h \
     /usr/local/cuda-8.0/include/math_functions.h \
     /usr/include/math.h \
+<<<<<<< HEAD
     /usr/include/bits/math-vector.h \
     /usr/include/bits/libm-simd-decl-stubs.h \
+=======
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/bits/huge_val.h \
     /usr/include/bits/huge_valf.h \
     /usr/include/bits/huge_vall.h \
@@ -81,10 +109,17 @@
     /usr/include/bits/mathdef.h \
     /usr/include/bits/mathcalls.h \
     /usr/include/bits/mathinline.h \
+<<<<<<< HEAD
     /usr/include/c++/5.1.1/cmath \
     /usr/include/c++/5.1.1/bits/cpp_type_traits.h \
     /usr/include/c++/5.1.1/ext/type_traits.h \
     /usr/include/c++/5.1.1/cstdlib \
+=======
+    /usr/include/c++/4.8.2/cmath \
+    /usr/include/c++/4.8.2/bits/cpp_type_traits.h \
+    /usr/include/c++/4.8.2/ext/type_traits.h \
+    /usr/include/c++/4.8.2/cstdlib \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/cuda-8.0/include/math_functions.hpp \
     /usr/local/cuda-8.0/include/math_functions_dbl_ptx3.h \
     /usr/local/cuda-8.0/include/math_functions_dbl_ptx3.hpp \
@@ -117,6 +152,7 @@
     /usr/local/cuda-8.0/include/texture_indirect_functions.h \
     /usr/local/cuda-8.0/include/surface_indirect_functions.h \
     /usr/local/cuda-8.0/include/device_launch_parameters.h \
+<<<<<<< HEAD
     /usr/include/c++/5.1.1/algorithm \
     /usr/include/c++/5.1.1/utility \
     /usr/include/c++/5.1.1/bits/stl_relops.h \
@@ -173,12 +209,73 @@
     /usr/include/c++/5.1.1/ext/atomicity.h \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/gthr.h \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/gthr-default.h \
+=======
+    /usr/include/c++/4.8.2/algorithm \
+    /usr/include/c++/4.8.2/utility \
+    /usr/include/c++/4.8.2/bits/stl_relops.h \
+    /usr/include/c++/4.8.2/bits/stl_pair.h \
+    /usr/include/c++/4.8.2/bits/move.h \
+    /usr/include/c++/4.8.2/bits/concept_check.h \
+    /usr/include/c++/4.8.2/bits/stl_algobase.h \
+    /usr/include/c++/4.8.2/bits/functexcept.h \
+    /usr/include/c++/4.8.2/bits/exception_defines.h \
+    /usr/include/c++/4.8.2/ext/numeric_traits.h \
+    /usr/include/c++/4.8.2/bits/stl_iterator_base_types.h \
+    /usr/include/c++/4.8.2/bits/stl_iterator_base_funcs.h \
+    /usr/include/c++/4.8.2/debug/debug.h \
+    /usr/include/c++/4.8.2/bits/stl_iterator.h \
+    /usr/include/c++/4.8.2/bits/stl_algo.h \
+    /usr/include/c++/4.8.2/bits/algorithmfwd.h \
+    /usr/include/c++/4.8.2/bits/stl_heap.h \
+    /usr/include/c++/4.8.2/bits/stl_tempbuf.h \
+    /usr/include/c++/4.8.2/bits/stl_construct.h \
+    /usr/include/c++/4.8.2/ext/alloc_traits.h \
+    /usr/include/c++/4.8.2/bits/allocator.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++allocator.h \
+    /usr/include/c++/4.8.2/ext/new_allocator.h \
+    /usr/include/c++/4.8.2/bits/memoryfwd.h \
+    /usr/include/c++/4.8.2/vector \
+    /usr/include/c++/4.8.2/bits/stl_uninitialized.h \
+    /usr/include/c++/4.8.2/bits/stl_vector.h \
+    /usr/include/c++/4.8.2/bits/stl_bvector.h \
+    /usr/include/c++/4.8.2/bits/range_access.h \
+    /usr/include/c++/4.8.2/bits/vector.tcc \
+    ./include/caffe/layers/batch_reindex_layer.hpp \
+    ./include/caffe/blob.hpp \
+    /usr/include/c++/4.8.2/string \
+    /usr/include/c++/4.8.2/bits/stringfwd.h \
+    /usr/include/c++/4.8.2/bits/char_traits.h \
+    /usr/include/c++/4.8.2/bits/postypes.h \
+    /usr/include/c++/4.8.2/cwchar \
+    /usr/include/bits/wchar.h \
+    /usr/include/c++/4.8.2/bits/localefwd.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h \
+    /usr/include/c++/4.8.2/clocale \
+    /usr/include/locale.h \
+    /usr/include/bits/locale.h \
+    /usr/include/c++/4.8.2/iosfwd \
+    /usr/include/c++/4.8.2/cctype \
+    /usr/include/ctype.h \
+    /usr/include/c++/4.8.2/bits/ostream_insert.h \
+    /usr/include/c++/4.8.2/bits/cxxabi_forced.h \
+    /usr/include/c++/4.8.2/bits/stl_function.h \
+    /usr/include/c++/4.8.2/backward/binders.h \
+    /usr/include/c++/4.8.2/bits/basic_string.h \
+    /usr/include/c++/4.8.2/ext/atomicity.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr-default.h \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/pthread.h \
     /usr/include/sched.h \
     /usr/include/bits/sched.h \
     /usr/include/bits/setjmp.h \
+<<<<<<< HEAD
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/atomic_word.h \
     /usr/include/c++/5.1.1/bits/basic_string.tcc \
+=======
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/atomic_word.h \
+    /usr/include/c++/4.8.2/bits/basic_string.tcc \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     ./include/caffe/common.hpp \
     /usr/local/include/boost/shared_ptr.hpp \
     /usr/local/include/boost/smart_ptr/shared_ptr.hpp \
@@ -187,7 +284,11 @@
     /usr/local/include/boost/config/select_compiler_config.hpp \
     /usr/local/include/boost/config/compiler/nvcc.hpp \
     /usr/local/include/boost/config/compiler/gcc.hpp \
+<<<<<<< HEAD
     /usr/include/c++/5.1.1/cstddef \
+=======
+    /usr/include/c++/4.8.2/cstddef \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/include/boost/config/select_stdlib_config.hpp \
     /usr/local/include/boost/config/stdlib/libstdcpp3.hpp \
     /usr/include/unistd.h \
@@ -200,9 +301,15 @@
     /usr/local/include/boost/config/posix_features.hpp \
     /usr/local/include/boost/config/suffix.hpp \
     /usr/local/include/boost/config/no_tr1/memory.hpp \
+<<<<<<< HEAD
     /usr/include/c++/5.1.1/memory \
     /usr/include/c++/5.1.1/bits/stl_raw_storage_iter.h \
     /usr/include/c++/5.1.1/backward/auto_ptr.h \
+=======
+    /usr/include/c++/4.8.2/memory \
+    /usr/include/c++/4.8.2/bits/stl_raw_storage_iter.h \
+    /usr/include/c++/4.8.2/backward/auto_ptr.h \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/include/boost/assert.hpp \
     /usr/local/include/boost/checked_delete.hpp \
     /usr/local/include/boost/core/checked_delete.hpp \
@@ -218,12 +325,21 @@
     /usr/local/include/boost/detail/sp_typeinfo.hpp \
     /usr/local/include/boost/core/typeinfo.hpp \
     /usr/local/include/boost/core/demangle.hpp \
+<<<<<<< HEAD
     /usr/include/c++/5.1.1/cxxabi.h \
     /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/cxxabi_tweaks.h \
     /usr/include/c++/5.1.1/typeinfo \
     /usr/local/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
     /usr/local/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
     /usr/include/c++/5.1.1/functional \
+=======
+    /usr/include/c++/4.8.2/cxxabi.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cxxabi_tweaks.h \
+    /usr/include/c++/4.8.2/typeinfo \
+    /usr/local/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
+    /usr/local/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
+    /usr/include/c++/4.8.2/functional \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/include/boost/core/addressof.hpp \
     /usr/local/include/boost/smart_ptr/detail/sp_convertible.hpp \
     /usr/local/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
@@ -294,7 +410,11 @@
     /usr/local/include/boost/predef/library/c.h \
     /usr/local/include/boost/predef/library/c/_prefix.h \
     /usr/local/include/boost/predef/detail/_cassert.h \
+<<<<<<< HEAD
     /usr/include/c++/5.1.1/cassert \
+=======
+    /usr/include/c++/4.8.2/cassert \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/local/include/boost/predef/library/c/gnu.h \
     /usr/local/include/boost/predef/library/c/uc.h \
     /usr/local/include/boost/predef/library/c/vms.h \
@@ -359,7 +479,11 @@
     /usr/local/include/boost/smart_ptr/detail/operator_bool.hpp \
     /usr/include/gflags/gflags.h \
     /usr/include/gflags/gflags_declare.h \
+<<<<<<< HEAD
     /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/stdint.h \
+=======
+    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     /usr/include/stdint.h \
     /usr/include/glog/logging.h \
     /usr/include/errno.h \
@@ -368,6 +492,7 @@
     /usr/include/asm/errno.h \
     /usr/include/asm-generic/errno.h \
     /usr/include/asm-generic/errno-base.h \
+<<<<<<< HEAD
     /usr/include/c++/5.1.1/ostream \
     /usr/include/c++/5.1.1/ios \
     /usr/include/c++/5.1.1/bits/ios_base.h \
@@ -410,6 +535,49 @@
     /usr/include/c++/5.1.1/set \
     /usr/include/c++/5.1.1/bits/stl_set.h \
     /usr/include/c++/5.1.1/bits/stl_multiset.h \
+=======
+    /usr/include/c++/4.8.2/ostream \
+    /usr/include/c++/4.8.2/ios \
+    /usr/include/c++/4.8.2/bits/ios_base.h \
+    /usr/include/c++/4.8.2/bits/locale_classes.h \
+    /usr/include/c++/4.8.2/bits/locale_classes.tcc \
+    /usr/include/c++/4.8.2/streambuf \
+    /usr/include/c++/4.8.2/bits/streambuf.tcc \
+    /usr/include/c++/4.8.2/bits/basic_ios.h \
+    /usr/include/c++/4.8.2/bits/locale_facets.h \
+    /usr/include/c++/4.8.2/cwctype \
+    /usr/include/wctype.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_base.h \
+    /usr/include/c++/4.8.2/bits/streambuf_iterator.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_inline.h \
+    /usr/include/c++/4.8.2/bits/locale_facets.tcc \
+    /usr/include/c++/4.8.2/bits/basic_ios.tcc \
+    /usr/include/c++/4.8.2/bits/ostream.tcc \
+    /usr/include/c++/4.8.2/sstream \
+    /usr/include/c++/4.8.2/istream \
+    /usr/include/c++/4.8.2/bits/istream.tcc \
+    /usr/include/c++/4.8.2/bits/sstream.tcc \
+    /usr/include/inttypes.h \
+    /usr/include/glog/log_severity.h \
+    /usr/include/glog/vlog_is_on.h \
+    /home/shshi/downloads/xgboost/include/xgboost/c_api.h \
+    /home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h \
+    /usr/include/c++/4.8.2/cstdio \
+    /usr/include/c++/4.8.2/climits \
+    /usr/include/c++/4.8.2/fstream \
+    /usr/include/c++/4.8.2/bits/codecvt.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
+    /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h \
+    /usr/include/c++/4.8.2/bits/fstream.tcc \
+    /usr/include/c++/4.8.2/iostream \
+    /usr/include/c++/4.8.2/map \
+    /usr/include/c++/4.8.2/bits/stl_tree.h \
+    /usr/include/c++/4.8.2/bits/stl_map.h \
+    /usr/include/c++/4.8.2/bits/stl_multimap.h \
+    /usr/include/c++/4.8.2/set \
+    /usr/include/c++/4.8.2/bits/stl_set.h \
+    /usr/include/c++/4.8.2/bits/stl_multiset.h \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     ./include/caffe/util/device_alternate.hpp \
     /usr/local/cuda-8.0/include/cublas_v2.h \
     /usr/local/cuda-8.0/include/cublas_api.h \
@@ -420,6 +588,7 @@
     ./include/caffe/util/cudnn.hpp \
     /usr/local/cuda-8.0/include/cudnn.h \
     .build-8.0_release/src/caffe/proto/caffe.pb.h \
+<<<<<<< HEAD
     /usr/include/google/protobuf/stubs/common.h \
     /usr/include/google/protobuf/generated_message_util.h \
     /usr/include/google/protobuf/stubs/once.h \
@@ -437,10 +606,36 @@
     /usr/include/google/protobuf/extension_set.h \
     /usr/include/google/protobuf/generated_enum_reflection.h \
     /usr/include/google/protobuf/unknown_field_set.h \
+=======
+    /usr/local/include/google/protobuf/stubs/common.h \
+    /usr/local/include/google/protobuf/generated_message_util.h \
+    /usr/local/include/google/protobuf/repeated_field.h \
+    /usr/include/c++/4.8.2/iterator \
+    /usr/include/c++/4.8.2/bits/stream_iterator.h \
+    /usr/local/include/google/protobuf/message_lite.h \
+    /usr/local/include/google/protobuf/io/coded_stream.h \
+    /usr/include/sys/param.h \
+    /usr/include/signal.h \
+    /usr/include/bits/signum.h \
+    /usr/include/bits/siginfo.h \
+    /usr/include/bits/sigaction.h \
+    /usr/include/bits/sigcontext.h \
+    /usr/include/bits/sigstack.h \
+    /usr/include/sys/ucontext.h \
+    /usr/include/bits/sigthread.h \
+    /usr/include/bits/param.h \
+    /usr/include/linux/param.h \
+    /usr/include/asm/param.h \
+    /usr/include/asm-generic/param.h \
+    /usr/local/include/google/protobuf/extension_set.h \
+    /usr/local/include/google/protobuf/generated_message_reflection.h \
+    /usr/local/include/google/protobuf/message.h \
+    /usr/local/include/google/protobuf/unknown_field_set.h \
+>>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
     ./include/caffe/syncedmem.hpp \
     ./include/caffe/layer.hpp \
     ./include/caffe/layer_factory.hpp \
     ./include/caffe/util/math_functions.hpp \
     ./include/caffe/util/mkl_alternate.hpp \
-    /usr/local/include/cblas.h \
-    /usr/local/include/openblas_config.h
+    /home/shshi/local/openblas/include/cblas.h \
+    /home/shshi/local/openblas/include/openblas_config.h
