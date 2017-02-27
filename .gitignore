@@ -97,3 +97,4 @@ MANIFEST-*
 
 # Logs
 *.log
+*-b*.prototxt
