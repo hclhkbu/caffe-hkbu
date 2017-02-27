@@ -3,29 +3,15 @@ import sys,os,time
 import subprocess
 import re
 
-<<<<<<< HEAD
-caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
+REPOS_HOME='/home/shshi/repos/caffe-optimized'
+caffebin=REPOS_HOME+'/build-8.0/tools/caffe'
 #caffebin='/home/dl/caffe-openblas/build/tools/caffe'
 #caffebin='/home/dl/caffe-hkbu/build-8.0/tools/caffe'
 
-config_file_home='/home/dl/caffe-hkbu-lr/benchmarks/2_layer'
-#config_file_home='/home/dl/caffe-hkbu-lr/benchmarks'
-#default_gpu_id=0
-default_gpu_id=1
-=======
-#caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
-#caffebin='/home/dl/caffe-openblas/build/tools/caffe'
-caffebin='/home/shshi/repos/caffe-optimized/build-8.0/tools/caffe'
-#caffebin='/home/shshi/repos/caffe-tnn/build-8.0/tools/caffe'
-#caffebin='/home/shshi/repos/caffe/build-8.0/tools/caffe'
-#caffebin='/home/dl/caffe-hkbu/build-8.0/tools/caffe'
-
-#config_file_home='/home/dl/caffe-hkbu-lr/benchmarks/2_layer'
-config_file_home='/home/shshi/repos/caffe-optimized/benchmarks/2_layer'
+config_file_home=REPOS_HOME+'/benchmarks/2_layer'
 #config_file_home='/home/dl/caffe-hkbu-lr/benchmarks'
 default_gpu_id=0
 #default_gpu_id=1
->>>>>>> 42fde795b6ec93672fabde1b40f9d0cdea4ae2ba
 
 def get_average_time(filename):
     file = open(filename, "r")
