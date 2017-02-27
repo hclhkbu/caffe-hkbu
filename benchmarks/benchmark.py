@@ -4,10 +4,14 @@ import subprocess
 import re
 
 #caffebin='/home/dl/caffe-hkbu-lr/build-8.0/tools/caffe'
-caffebin='/home/dl/caffe-openblas/build/tools/caffe'
+#caffebin='/home/dl/caffe-openblas/build/tools/caffe'
+caffebin='/home/shshi/repos/caffe-optimized/build-8.0/tools/caffe'
+#caffebin='/home/shshi/repos/caffe-tnn/build-8.0/tools/caffe'
+#caffebin='/home/shshi/repos/caffe/build-8.0/tools/caffe'
 #caffebin='/home/dl/caffe-hkbu/build-8.0/tools/caffe'
 
-config_file_home='/home/dl/caffe-hkbu-lr/benchmarks/2_layer'
+#config_file_home='/home/dl/caffe-hkbu-lr/benchmarks/2_layer'
+config_file_home='/home/shshi/repos/caffe-optimized/benchmarks/2_layer'
 default_gpu_id=0
 #default_gpu_id=1
 

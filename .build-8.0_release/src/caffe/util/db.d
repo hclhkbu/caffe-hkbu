@@ -1,7 +1,7 @@
 .build-8.0_release/src/caffe/util/db.o: src/caffe/util/db.cpp \
  include/caffe/util/db.hpp include/caffe/common.hpp \
- /home/dl/shshi/xgboost/include/xgboost/c_api.h \
- /home/dl/shshi/xgboost/rabit/include/rabit/c_api.h \
+ /home/shshi/downloads/xgboost/include/xgboost/c_api.h \
+ /home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h \
  include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
@@ -26,7 +26,7 @@
  /usr/local/cuda-8.0/include/vector_functions.hpp \
  /usr/local/cuda-8.0/include/curand.h \
  /usr/local/cuda-8.0/include/driver_types.h include/caffe/util/cudnn.hpp \
- /usr/local/cudnn-5.1/cuda/include/cudnn.h \
+ /usr/local/cuda-8.0/include/cudnn.h \
  .build-8.0_release/src/caffe/proto/caffe.pb.h \
  include/caffe/util/db_leveldb.hpp include/caffe/util/db_lmdb.hpp
 
@@ -34,9 +34,9 @@ include/caffe/util/db.hpp:
 
 include/caffe/common.hpp:
 
-/home/dl/shshi/xgboost/include/xgboost/c_api.h:
+/home/shshi/downloads/xgboost/include/xgboost/c_api.h:
 
-/home/dl/shshi/xgboost/rabit/include/rabit/c_api.h:
+/home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h:
 
 include/caffe/util/device_alternate.hpp:
 
@@ -88,7 +88,7 @@ include/caffe/util/device_alternate.hpp:
 
 include/caffe/util/cudnn.hpp:
 
-/usr/local/cudnn-5.1/cuda/include/cudnn.h:
+/usr/local/cuda-8.0/include/cudnn.h:
 
 .build-8.0_release/src/caffe/proto/caffe.pb.h:
 

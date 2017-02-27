@@ -1,7 +1,7 @@
 .build-8.0_release/tools/extract_features.o: tools/extract_features.cpp \
  include/caffe/blob.hpp include/caffe/common.hpp \
- /home/dl/shshi/xgboost/include/xgboost/c_api.h \
- /home/dl/shshi/xgboost/rabit/include/rabit/c_api.h \
+ /home/shshi/downloads/xgboost/include/xgboost/c_api.h \
+ /home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h \
  include/caffe/util/device_alternate.hpp \
  /usr/local/cuda-8.0/include/cublas_v2.h \
  /usr/local/cuda-8.0/include/cublas_api.h \
@@ -26,21 +26,24 @@
  /usr/local/cuda-8.0/include/vector_functions.hpp \
  /usr/local/cuda-8.0/include/curand.h \
  /usr/local/cuda-8.0/include/driver_types.h include/caffe/util/cudnn.hpp \
- /usr/local/cudnn-5.1/cuda/include/cudnn.h \
+ /usr/local/cuda-8.0/include/cudnn.h \
  .build-8.0_release/src/caffe/proto/caffe.pb.h \
  include/caffe/syncedmem.hpp include/caffe/net.hpp \
  include/caffe/layer.hpp include/caffe/layer_factory.hpp \
  include/caffe/util/math_functions.hpp \
- include/caffe/util/mkl_alternate.hpp include/caffe/util/db.hpp \
- include/caffe/util/format.hpp include/caffe/util/io.hpp
+ include/caffe/util/mkl_alternate.hpp \
+ /home/shshi/local/openblas/include/cblas.h \
+ /home/shshi/local/openblas/include/openblas_config.h \
+ include/caffe/util/db.hpp include/caffe/util/format.hpp \
+ include/caffe/util/io.hpp
 
 include/caffe/blob.hpp:
 
 include/caffe/common.hpp:
 
-/home/dl/shshi/xgboost/include/xgboost/c_api.h:
+/home/shshi/downloads/xgboost/include/xgboost/c_api.h:
 
-/home/dl/shshi/xgboost/rabit/include/rabit/c_api.h:
+/home/shshi/downloads/xgboost/rabit/include/rabit/c_api.h:
 
 include/caffe/util/device_alternate.hpp:
 
@@ -92,7 +95,7 @@ include/caffe/util/device_alternate.hpp:
 
 include/caffe/util/cudnn.hpp:
 
-/usr/local/cudnn-5.1/cuda/include/cudnn.h:
+/usr/local/cuda-8.0/include/cudnn.h:
 
 .build-8.0_release/src/caffe/proto/caffe.pb.h:
 
@@ -107,6 +110,10 @@ include/caffe/layer_factory.hpp:
 include/caffe/util/math_functions.hpp:
 
 include/caffe/util/mkl_alternate.hpp:
+
+/home/shshi/local/openblas/include/cblas.h:
+
+/home/shshi/local/openblas/include/openblas_config.h:
 
 include/caffe/util/db.hpp:
 

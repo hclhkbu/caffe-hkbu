@@ -1,5 +1,7 @@
-I0226 22:41:52.429474  8491 caffe.cpp:308] Use GPU with device ID 0
-I0226 22:41:52.827036  8491 net.cpp:49] Initializing net from parameters: 
+I0227 10:04:07.000404 23139 caffe.cpp:308] Use GPU with device ID 0
+I0227 10:04:07.356587 23139 common.cpp:128] Start to init xgboost ......
+I0227 10:04:07.357837 23139 common.cpp:162] Init xgboost finished!
+I0227 10:04:07.360616 23139 net.cpp:49] Initializing net from parameters: 
 state {
   phase: TRAIN
 }
@@ -9,7 +11,7 @@ layer {
   top: "Data1"
   top: "Data2"
   data_param {
-    source: "/home/dl/data/caffe/fake_data26752.lmdb"
+    source: "/home/shshi/data/caffe/fake_data26752.lmdb"
     batch_size: 128
     backend: LMDB
   }
@@ -60,108 +62,112 @@ layer {
   bottom: "Data2"
   top: "SoftmaxWithLoss1"
 }
-I0226 22:41:52.827117  8491 layer_factory.hpp:77] Creating layer Data1
-I0226 22:41:52.827466  8491 net.cpp:91] Creating Layer Data1
-I0226 22:41:52.827481  8491 net.cpp:399] Data1 -> Data1
-I0226 22:41:52.827507  8491 net.cpp:399] Data1 -> Data2
-I0226 22:41:52.828963  8498 db_lmdb.cpp:35] Opened lmdb /home/dl/data/caffe/fake_data26752.lmdb
-I0226 22:41:52.844782  8491 data_layer.cpp:41] output data size: 128,1,1,26752
-I0226 22:41:52.866782  8491 net.cpp:141] Setting up Data1
-I0226 22:41:52.866839  8491 net.cpp:148] Top shape: 128 1 1 26752 (3424256)
-I0226 22:41:52.866848  8491 net.cpp:148] Top shape: 128 (128)
-I0226 22:41:52.866855  8491 net.cpp:156] Memory required for data: 13697536
-I0226 22:41:52.866868  8491 layer_factory.hpp:77] Creating layer InnerProduct1
-I0226 22:41:52.866884  8491 net.cpp:91] Creating Layer InnerProduct1
-I0226 22:41:52.866894  8491 net.cpp:425] InnerProduct1 <- Data1
-I0226 22:41:52.866907  8491 net.cpp:399] InnerProduct1 -> InnerProduct1
-I0226 22:41:53.047206  8491 net.cpp:141] Setting up InnerProduct1
-I0226 22:41:53.047253  8491 net.cpp:148] Top shape: 128 4096 (524288)
-I0226 22:41:53.047261  8491 net.cpp:156] Memory required for data: 15794688
-I0226 22:41:53.047283  8491 layer_factory.hpp:77] Creating layer Sigmoid1
-I0226 22:41:53.047299  8491 net.cpp:91] Creating Layer Sigmoid1
-I0226 22:41:53.047307  8491 net.cpp:425] Sigmoid1 <- InnerProduct1
-I0226 22:41:53.047317  8491 net.cpp:386] Sigmoid1 -> InnerProduct1 (in-place)
-I0226 22:41:53.225493  8491 net.cpp:141] Setting up Sigmoid1
-I0226 22:41:53.225538  8491 net.cpp:148] Top shape: 128 4096 (524288)
-I0226 22:41:53.225545  8491 net.cpp:156] Memory required for data: 17891840
-I0226 22:41:53.225554  8491 layer_factory.hpp:77] Creating layer InnerProduct2
-I0226 22:41:53.225569  8491 net.cpp:91] Creating Layer InnerProduct2
-I0226 22:41:53.225577  8491 net.cpp:425] InnerProduct2 <- InnerProduct1
-I0226 22:41:53.225587  8491 net.cpp:399] InnerProduct2 -> InnerProduct2
-I0226 22:41:53.252327  8491 net.cpp:141] Setting up InnerProduct2
-I0226 22:41:53.252377  8491 net.cpp:148] Top shape: 128 4096 (524288)
-I0226 22:41:53.252385  8491 net.cpp:156] Memory required for data: 19988992
-I0226 22:41:53.252403  8491 layer_factory.hpp:77] Creating layer Sigmoid2
-I0226 22:41:53.252418  8491 net.cpp:91] Creating Layer Sigmoid2
-I0226 22:41:53.252425  8491 net.cpp:425] Sigmoid2 <- InnerProduct2
-I0226 22:41:53.252434  8491 net.cpp:386] Sigmoid2 -> InnerProduct2 (in-place)
-I0226 22:41:53.253016  8491 net.cpp:141] Setting up Sigmoid2
-I0226 22:41:53.253031  8491 net.cpp:148] Top shape: 128 4096 (524288)
-I0226 22:41:53.253037  8491 net.cpp:156] Memory required for data: 22086144
-I0226 22:41:53.253044  8491 layer_factory.hpp:77] Creating layer InnerProduct3
-I0226 22:41:53.253054  8491 net.cpp:91] Creating Layer InnerProduct3
-I0226 22:41:53.253060  8491 net.cpp:425] InnerProduct3 <- InnerProduct2
-I0226 22:41:53.253068  8491 net.cpp:399] InnerProduct3 -> InnerProduct3
-I0226 22:41:53.426154  8491 net.cpp:141] Setting up InnerProduct3
-I0226 22:41:53.426219  8491 net.cpp:148] Top shape: 128 26752 (3424256)
-I0226 22:41:53.426235  8491 net.cpp:156] Memory required for data: 35783168
-I0226 22:41:53.426254  8491 layer_factory.hpp:77] Creating layer SoftmaxWithLoss1
-I0226 22:41:53.426266  8491 net.cpp:91] Creating Layer SoftmaxWithLoss1
-I0226 22:41:53.426275  8491 net.cpp:425] SoftmaxWithLoss1 <- InnerProduct3
-I0226 22:41:53.426283  8491 net.cpp:425] SoftmaxWithLoss1 <- Data2
-I0226 22:41:53.426295  8491 net.cpp:399] SoftmaxWithLoss1 -> SoftmaxWithLoss1
-I0226 22:41:53.426314  8491 layer_factory.hpp:77] Creating layer SoftmaxWithLoss1
-I0226 22:41:53.432114  8491 net.cpp:141] Setting up SoftmaxWithLoss1
-I0226 22:41:53.432163  8491 net.cpp:148] Top shape: (1)
-I0226 22:41:53.432169  8491 net.cpp:151]     with loss weight 1
-I0226 22:41:53.432202  8491 net.cpp:156] Memory required for data: 35783172
-I0226 22:41:53.432210  8491 net.cpp:217] SoftmaxWithLoss1 needs backward computation.
-I0226 22:41:53.432219  8491 net.cpp:217] InnerProduct3 needs backward computation.
-I0226 22:41:53.432226  8491 net.cpp:217] Sigmoid2 needs backward computation.
-I0226 22:41:53.432232  8491 net.cpp:217] InnerProduct2 needs backward computation.
-I0226 22:41:53.432238  8491 net.cpp:217] Sigmoid1 needs backward computation.
-I0226 22:41:53.432245  8491 net.cpp:217] InnerProduct1 needs backward computation.
-I0226 22:41:53.432251  8491 net.cpp:219] Data1 does not need backward computation.
-I0226 22:41:53.432257  8491 net.cpp:261] This network produces output SoftmaxWithLoss1
-I0226 22:41:53.432270  8491 net.cpp:274] Network initialization done.
-I0226 22:41:53.432297  8491 caffe.cpp:320] Performing Forward
-I0226 22:41:53.616493  8491 caffe.cpp:325] Initial loss: 10.1944
-I0226 22:41:53.616536  8491 caffe.cpp:326] Performing Backward
-I0226 22:41:53.618330  8491 caffe.cpp:334] *** Benchmark begins ***
-I0226 22:41:53.618345  8491 caffe.cpp:335] Testing for 16 iterations.
-I0226 22:41:53.675457  8491 caffe.cpp:363] Iteration: 1 forward-backward time: 37.7846 ms.
-I0226 22:41:53.712939  8491 caffe.cpp:363] Iteration: 2 forward-backward time: 37.4152 ms.
-I0226 22:41:53.750207  8491 caffe.cpp:363] Iteration: 3 forward-backward time: 37.207 ms.
-I0226 22:41:53.787065  8491 caffe.cpp:363] Iteration: 4 forward-backward time: 36.795 ms.
-I0226 22:41:53.823935  8491 caffe.cpp:363] Iteration: 5 forward-backward time: 36.8087 ms.
-I0226 22:41:53.860898  8491 caffe.cpp:363] Iteration: 6 forward-backward time: 36.898 ms.
-I0226 22:41:53.897817  8491 caffe.cpp:363] Iteration: 7 forward-backward time: 36.8598 ms.
-I0226 22:41:53.934770  8491 caffe.cpp:363] Iteration: 8 forward-backward time: 36.8906 ms.
-I0226 22:41:53.972008  8491 caffe.cpp:363] Iteration: 9 forward-backward time: 37.1773 ms.
-I0226 22:41:54.009335  8491 caffe.cpp:363] Iteration: 10 forward-backward time: 37.2635 ms.
-I0226 22:41:54.046985  8491 caffe.cpp:363] Iteration: 11 forward-backward time: 37.5818 ms.
-I0226 22:41:54.084045  8491 caffe.cpp:363] Iteration: 12 forward-backward time: 37.0002 ms.
-I0226 22:41:54.121399  8491 caffe.cpp:363] Iteration: 13 forward-backward time: 37.2901 ms.
-I0226 22:41:54.158735  8491 caffe.cpp:363] Iteration: 14 forward-backward time: 37.2738 ms.
-I0226 22:41:54.195822  8491 caffe.cpp:363] Iteration: 15 forward-backward time: 37.0298 ms.
-I0226 22:41:54.232880  8491 caffe.cpp:363] Iteration: 16 forward-backward time: 36.9961 ms.
-I0226 22:41:54.232924  8491 caffe.cpp:366] Average time per layer: 
-I0226 22:41:54.232931  8491 caffe.cpp:369]      Data1	forward: 0.15425 ms.
-I0226 22:41:54.232939  8491 caffe.cpp:372]      Data1	backward: 0.00191 ms.
-I0226 22:41:54.232947  8491 caffe.cpp:369] InnerProduct1	forward: 12.4774 ms.
-I0226 22:41:54.232954  8491 caffe.cpp:372] InnerProduct1	backward: 5.57552 ms.
-I0226 22:41:54.232961  8491 caffe.cpp:369]   Sigmoid1	forward: 0.025006 ms.
-I0226 22:41:54.232969  8491 caffe.cpp:372]   Sigmoid1	backward: 0.031488 ms.
-I0226 22:41:54.232976  8491 caffe.cpp:369] InnerProduct2	forward: 0.87922 ms.
-I0226 22:41:54.232982  8491 caffe.cpp:372] InnerProduct2	backward: 1.5115 ms.
-I0226 22:41:54.232998  8491 caffe.cpp:369]   Sigmoid2	forward: 0.02346 ms.
-I0226 22:41:54.233013  8491 caffe.cpp:372]   Sigmoid2	backward: 0.046424 ms.
-I0226 22:41:54.233021  8491 caffe.cpp:369] InnerProduct3	forward: 5.85397 ms.
-I0226 22:41:54.233028  8491 caffe.cpp:372] InnerProduct3	backward: 9.64136 ms.
-I0226 22:41:54.233034  8491 caffe.cpp:369] SoftmaxWithLoss1	forward: 0.55264 ms.
-I0226 22:41:54.233042  8491 caffe.cpp:372] SoftmaxWithLoss1	backward: 0.240476 ms.
-I0226 22:41:54.233059  8491 caffe.cpp:377] Average Forward pass: 20.0253 ms.
-I0226 22:41:54.233069  8491 caffe.cpp:379] Average Backward pass: 17.1016 ms.
-I0226 22:41:54.233079  8491 caffe.cpp:381] Average Forward-Backward: 37.2122 ms.
-I0226 22:41:54.233088  8491 caffe.cpp:383] Total Time: 595.395 ms.
-I0226 22:41:54.233096  8491 caffe.cpp:384] *** Benchmark ends ***
+I0227 10:04:07.360695 23139 layer_factory.hpp:77] Creating layer Data1
+I0227 10:04:07.361299 23139 net.cpp:91] Creating Layer Data1
+I0227 10:04:07.361315 23139 net.cpp:399] Data1 -> Data1
+I0227 10:04:07.361382 23139 net.cpp:399] Data1 -> Data2
+I0227 10:04:07.362684 23167 common.cpp:128] Start to init xgboost ......
+I0227 10:04:07.363667 23167 common.cpp:162] Init xgboost finished!
+I0227 10:04:07.363895 23167 db_lmdb.cpp:35] Opened lmdb /home/shshi/data/caffe/fake_data26752.lmdb
+I0227 10:04:07.383302 23139 data_layer.cpp:41] output data size: 128,1,1,26752
+I0227 10:04:07.409497 23139 net.cpp:141] Setting up Data1
+I0227 10:04:07.409600 23139 net.cpp:148] Top shape: 128 1 1 26752 (3424256)
+I0227 10:04:07.409613 23139 net.cpp:148] Top shape: 128 (128)
+I0227 10:04:07.409618 23139 net.cpp:156] Memory required for data: 13697536
+I0227 10:04:07.409629 23139 layer_factory.hpp:77] Creating layer InnerProduct1
+I0227 10:04:07.409646 23139 net.cpp:91] Creating Layer InnerProduct1
+I0227 10:04:07.409653 23139 net.cpp:425] InnerProduct1 <- Data1
+I0227 10:04:07.409670 23139 net.cpp:399] InnerProduct1 -> InnerProduct1
+I0227 10:04:07.557001 23179 common.cpp:128] Start to init xgboost ......
+I0227 10:04:07.558612 23179 common.cpp:162] Init xgboost finished!
+I0227 10:04:07.662314 23139 net.cpp:141] Setting up InnerProduct1
+I0227 10:04:07.662354 23139 net.cpp:148] Top shape: 128 4096 (524288)
+I0227 10:04:07.662358 23139 net.cpp:156] Memory required for data: 15794688
+I0227 10:04:07.662385 23139 layer_factory.hpp:77] Creating layer Sigmoid1
+I0227 10:04:07.662402 23139 net.cpp:91] Creating Layer Sigmoid1
+I0227 10:04:07.662422 23139 net.cpp:425] Sigmoid1 <- InnerProduct1
+I0227 10:04:07.662430 23139 net.cpp:386] Sigmoid1 -> InnerProduct1 (in-place)
+I0227 10:04:07.812882 23139 net.cpp:141] Setting up Sigmoid1
+I0227 10:04:07.812917 23139 net.cpp:148] Top shape: 128 4096 (524288)
+I0227 10:04:07.812922 23139 net.cpp:156] Memory required for data: 17891840
+I0227 10:04:07.812928 23139 layer_factory.hpp:77] Creating layer InnerProduct2
+I0227 10:04:07.812939 23139 net.cpp:91] Creating Layer InnerProduct2
+I0227 10:04:07.812944 23139 net.cpp:425] InnerProduct2 <- InnerProduct1
+I0227 10:04:07.812952 23139 net.cpp:399] InnerProduct2 -> InnerProduct2
+I0227 10:04:07.843713 23139 net.cpp:141] Setting up InnerProduct2
+I0227 10:04:07.843751 23139 net.cpp:148] Top shape: 128 4096 (524288)
+I0227 10:04:07.843755 23139 net.cpp:156] Memory required for data: 19988992
+I0227 10:04:07.843767 23139 layer_factory.hpp:77] Creating layer Sigmoid2
+I0227 10:04:07.843778 23139 net.cpp:91] Creating Layer Sigmoid2
+I0227 10:04:07.843783 23139 net.cpp:425] Sigmoid2 <- InnerProduct2
+I0227 10:04:07.843789 23139 net.cpp:386] Sigmoid2 -> InnerProduct2 (in-place)
+I0227 10:04:07.843969 23139 net.cpp:141] Setting up Sigmoid2
+I0227 10:04:07.843978 23139 net.cpp:148] Top shape: 128 4096 (524288)
+I0227 10:04:07.843992 23139 net.cpp:156] Memory required for data: 22086144
+I0227 10:04:07.844004 23139 layer_factory.hpp:77] Creating layer InnerProduct3
+I0227 10:04:07.844012 23139 net.cpp:91] Creating Layer InnerProduct3
+I0227 10:04:07.844015 23139 net.cpp:425] InnerProduct3 <- InnerProduct2
+I0227 10:04:07.844020 23139 net.cpp:399] InnerProduct3 -> InnerProduct3
+I0227 10:04:08.043812 23139 net.cpp:141] Setting up InnerProduct3
+I0227 10:04:08.043850 23139 net.cpp:148] Top shape: 128 26752 (3424256)
+I0227 10:04:08.043855 23139 net.cpp:156] Memory required for data: 35783168
+I0227 10:04:08.043869 23139 layer_factory.hpp:77] Creating layer SoftmaxWithLoss1
+I0227 10:04:08.043882 23139 net.cpp:91] Creating Layer SoftmaxWithLoss1
+I0227 10:04:08.043887 23139 net.cpp:425] SoftmaxWithLoss1 <- InnerProduct3
+I0227 10:04:08.043893 23139 net.cpp:425] SoftmaxWithLoss1 <- Data2
+I0227 10:04:08.043900 23139 net.cpp:399] SoftmaxWithLoss1 -> SoftmaxWithLoss1
+I0227 10:04:08.043920 23139 layer_factory.hpp:77] Creating layer SoftmaxWithLoss1
+I0227 10:04:08.050169 23139 net.cpp:141] Setting up SoftmaxWithLoss1
+I0227 10:04:08.050199 23139 net.cpp:148] Top shape: (1)
+I0227 10:04:08.050204 23139 net.cpp:151]     with loss weight 1
+I0227 10:04:08.050235 23139 net.cpp:156] Memory required for data: 35783172
+I0227 10:04:08.050238 23139 net.cpp:217] SoftmaxWithLoss1 needs backward computation.
+I0227 10:04:08.050243 23139 net.cpp:217] InnerProduct3 needs backward computation.
+I0227 10:04:08.050246 23139 net.cpp:217] Sigmoid2 needs backward computation.
+I0227 10:04:08.050251 23139 net.cpp:217] InnerProduct2 needs backward computation.
+I0227 10:04:08.050253 23139 net.cpp:217] Sigmoid1 needs backward computation.
+I0227 10:04:08.050256 23139 net.cpp:217] InnerProduct1 needs backward computation.
+I0227 10:04:08.050259 23139 net.cpp:219] Data1 does not need backward computation.
+I0227 10:04:08.050262 23139 net.cpp:261] This network produces output SoftmaxWithLoss1
+I0227 10:04:08.050271 23139 net.cpp:274] Network initialization done.
+I0227 10:04:08.050298 23139 caffe.cpp:320] Performing Forward
+I0227 10:04:08.248531 23139 caffe.cpp:325] Initial loss: 10.1944
+I0227 10:04:08.248576 23139 caffe.cpp:326] Performing Backward
+I0227 10:04:08.250450 23139 caffe.cpp:334] *** Benchmark begins ***
+I0227 10:04:08.250463 23139 caffe.cpp:335] Testing for 16 iterations.
+I0227 10:04:08.391165 23139 caffe.cpp:363] Iteration: 1 forward-backward time: 88.2583 ms.
+I0227 10:04:08.478687 23139 caffe.cpp:363] Iteration: 2 forward-backward time: 87.4649 ms.
+I0227 10:04:08.566614 23139 caffe.cpp:363] Iteration: 3 forward-backward time: 87.8732 ms.
+I0227 10:04:08.654237 23139 caffe.cpp:363] Iteration: 4 forward-backward time: 87.5709 ms.
+I0227 10:04:08.742019 23139 caffe.cpp:363] Iteration: 5 forward-backward time: 87.7277 ms.
+I0227 10:04:08.829694 23139 caffe.cpp:363] Iteration: 6 forward-backward time: 87.6178 ms.
+I0227 10:04:08.916797 23139 caffe.cpp:363] Iteration: 7 forward-backward time: 87.0355 ms.
+I0227 10:04:09.004417 23139 caffe.cpp:363] Iteration: 8 forward-backward time: 87.5622 ms.
+I0227 10:04:09.091892 23139 caffe.cpp:363] Iteration: 9 forward-backward time: 87.4206 ms.
+I0227 10:04:09.179289 23139 caffe.cpp:363] Iteration: 10 forward-backward time: 87.3431 ms.
+I0227 10:04:09.266631 23139 caffe.cpp:363] Iteration: 11 forward-backward time: 87.2877 ms.
+I0227 10:04:09.352596 23139 caffe.cpp:363] Iteration: 12 forward-backward time: 85.9104 ms.
+I0227 10:04:09.438402 23139 caffe.cpp:363] Iteration: 13 forward-backward time: 85.752 ms.
+I0227 10:04:09.524499 23139 caffe.cpp:363] Iteration: 14 forward-backward time: 86.0402 ms.
+I0227 10:04:09.610900 23139 caffe.cpp:363] Iteration: 15 forward-backward time: 86.3442 ms.
+I0227 10:04:09.697347 23139 caffe.cpp:363] Iteration: 16 forward-backward time: 86.3766 ms.
+I0227 10:04:09.697389 23139 caffe.cpp:366] Average time per layer: 
+I0227 10:04:09.697396 23139 caffe.cpp:369]      Data1	forward: 0.162548 ms.
+I0227 10:04:09.697407 23139 caffe.cpp:372]      Data1	backward: 0.001338 ms.
+I0227 10:04:09.697422 23139 caffe.cpp:369] InnerProduct1	forward: 17.0012 ms.
+I0227 10:04:09.697438 23139 caffe.cpp:372] InnerProduct1	backward: 16.584 ms.
+I0227 10:04:09.697443 23139 caffe.cpp:369]   Sigmoid1	forward: 0.039764 ms.
+I0227 10:04:09.697448 23139 caffe.cpp:372]   Sigmoid1	backward: 0.040064 ms.
+I0227 10:04:09.697451 23139 caffe.cpp:369] InnerProduct2	forward: 2.80059 ms.
+I0227 10:04:09.697455 23139 caffe.cpp:372] InnerProduct2	backward: 4.35618 ms.
+I0227 10:04:09.697459 23139 caffe.cpp:369]   Sigmoid2	forward: 0.039016 ms.
+I0227 10:04:09.697463 23139 caffe.cpp:372]   Sigmoid2	backward: 0.04568 ms.
+I0227 10:04:09.697468 23139 caffe.cpp:369] InnerProduct3	forward: 15.9125 ms.
+I0227 10:04:09.697471 23139 caffe.cpp:372] InnerProduct3	backward: 28.0012 ms.
+I0227 10:04:09.697475 23139 caffe.cpp:369] SoftmaxWithLoss1	forward: 1.69238 ms.
+I0227 10:04:09.697479 23139 caffe.cpp:372] SoftmaxWithLoss1	backward: 0.274494 ms.
+I0227 10:04:09.697494 23139 caffe.cpp:377] Average Forward pass: 37.7241 ms.
+I0227 10:04:09.697501 23139 caffe.cpp:379] Average Backward pass: 49.3579 ms.
+I0227 10:04:09.697507 23139 caffe.cpp:381] Average Forward-Backward: 87.1641 ms.
+I0227 10:04:09.697513 23139 caffe.cpp:383] Total Time: 1394.63 ms.
+I0227 10:04:09.697518 23139 caffe.cpp:384] *** Benchmark ends ***
