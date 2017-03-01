@@ -121,9 +121,30 @@ Caffe::Caffe()
       != CURAND_STATUS_SUCCESS) {
     LOG(ERROR) << "Cannot create Curand generator. Curand won't be available.";
   }
-  //model_ = svm_load_model("/tmp/gemm.model");
-  int nNumAttr = 3;
+  model_ = svm_load_model("/tmp/gemm.model");
+  int nNumAttr = 12;
   node_ = (struct svm_node *) malloc(nNumAttr*sizeof(struct svm_node));
+  int current_device;
+  CUDA_CHECK(cudaGetDevice(&current_device));
+  cudaDeviceProp prop;
+  CUDA_CHECK(cudaGetDeviceProperties(&prop, current_device));
+  node_[0].index = 1;
+  node_[1].index = 2;
+  node_[2].index = 3;
+  node_[3].index = 4; 
+  node_[4].index = 5;
+  node_[5].index = 6;
+  node_[6].index = 7; 
+  node_[7].index = 8; 
+  node_[0].value = prop.major/6.0;              
+  node_[1].value = prop.minor/7.0;              
+  node_[2].value = prop.totalGlobalMem/double(11995578368.0);     
+  node_[3].value = prop.multiProcessorCount/20.0;
+  node_[4].value = prop.clockRate/double(1733500.0);          
+  node_[5].value = prop.memoryClockRate/double(5005000.0);  
+  node_[6].value = prop.memoryBusWidth/384.0;     
+  node_[7].value = prop.l2CacheSize/double(2097152.0);        
+
   //init xgboost
   LOG(INFO) << "Start to init xgboost ......";
   int nCols=11, nRows=1;
@@ -139,10 +160,6 @@ Caffe::Caffe()
   XGBoosterSetParam(xgBooster_, "max_depth", "16");
   XGBoosterSetParam(xgBooster_, "eta", "1");
   XGBoosterSetParam(xgBooster_, "gamma", "0");
-  int current_device;
-  CUDA_CHECK(cudaGetDevice(&current_device));
-  cudaDeviceProp prop;
-  CUDA_CHECK(cudaGetDeviceProperties(&prop, current_device));
   xgSampleFeatures_[0][0] = prop.major;
   xgSampleFeatures_[0][1] = prop.minor;
   xgSampleFeatures_[0][2] = prop.totalGlobalMem;
@@ -214,19 +231,6 @@ void Caffe::SetDevice(const int device_id) {
       CURAND_RNG_PSEUDO_DEFAULT));
   CURAND_CHECK(curandSetPseudoRandomGeneratorSeed(Get().curand_generator_,
       cluster_seedgen()));
-  cudaDeviceProp prop;
-  CUDA_CHECK(cudaGetDeviceProperties(&prop, device_id));
-  LOG(INFO) << "Set device properties";
-  Get().deviceProp_ = prop;
-  Get().xgSampleFeatures_[0][0] = prop.major;
-  Get().xgSampleFeatures_[0][1] = prop.minor;
-  Get().xgSampleFeatures_[0][2] = prop.totalGlobalMem;
-  Get().xgSampleFeatures_[0][3] = prop.multiProcessorCount;
-  Get().xgSampleFeatures_[0][4] = prop.clockRate;
-  Get().xgSampleFeatures_[0][5] = prop.memoryClockRate;
-  Get().xgSampleFeatures_[0][6] = prop.memoryBusWidth;
-  Get().xgSampleFeatures_[0][7] = prop.l2CacheSize;
-  LOG(INFO) << "Set device properties finished";
 }
 
 void Caffe::DeviceQuery() {
@@ -261,61 +265,27 @@ void Caffe::DeviceQuery() {
   LOG(INFO) << "Number of multiprocessors:     " << prop.multiProcessorCount;
   LOG(INFO) << "Kernel execution timeout:      "
       << (prop.kernelExecTimeoutEnabled ? "Yes" : "No");
-  Get().deviceProp_ = prop;
-  Get().xgSampleFeatures_[0][0] = prop.major;
-  Get().xgSampleFeatures_[0][1] = prop.minor;
-  Get().xgSampleFeatures_[0][2] = prop.totalGlobalMem;
-  Get().xgSampleFeatures_[0][3] = prop.multiProcessorCount;
-  Get().xgSampleFeatures_[0][4] = prop.clockRate;
-  Get().xgSampleFeatures_[0][5] = prop.memoryClockRate;
-  Get().xgSampleFeatures_[0][6] = prop.memoryBusWidth;
-  Get().xgSampleFeatures_[0][7] = prop.l2CacheSize;
   return;
 }
 
-bool Caffe::CheckDevice(const int device_id) {
-  // This function checks the availability of GPU #device_id.
-  // It attempts to create a context on the device by calling cudaFree(0).
-  // cudaSetDevice() alone is not sufficient to check the availability.
-  // It lazily records device_id, however, does not initialize a
-  // context. So it does not know if the host thread has the permission to use
-  // the device or not.
-  //
-  // In a shared environment where the devices are set to EXCLUSIVE_PROCESS
-  // or EXCLUSIVE_THREAD mode, cudaSetDevice() returns cudaSuccess
-  // even if the device is exclusively occupied by another process or thread.
-  // Cuda operations that initialize the context are needed to check
-  // the permission. cudaFree(0) is one of those with no side effect,
-  // except the context initialization.
-  bool r = ((cudaSuccess == cudaSetDevice(device_id)) &&
-            (cudaSuccess == cudaFree(0)));
-  // reset any error that may have occurred.
-  cudaGetLastError();
-  return r;
-}
-
-int Caffe::FindDevice(const int start_id) {
-  // This function finds the first available device by checking devices with
-  // ordinal from start_id to the highest available value. In the
-  // EXCLUSIVE_PROCESS or EXCLUSIVE_THREAD mode, if it succeeds, it also
-  // claims the device due to the initialization of the context.
-  int count = 0;
-  CUDA_CHECK(cudaGetDeviceCount(&count));
-  for (int i = start_id; i < count; i++) {
-    if (CheckDevice(i)) return i;
-  }
-  return -1;
-}
 
 double Caffe::predict(size_t nWA, size_t nHA, size_t nHB) {
-  Get().node_[0].index = 1;
-  Get().node_[0].value = log2(double(nHA));
-  Get().node_[1].index = 2;
-  Get().node_[1].value = log2(double(nHB));
-  Get().node_[2].index = 3;
-  Get().node_[2].value = log2(double(nWA));
-  Get().node_[3].index = -1;
+
+  Get().node_[8].index = 9;
+  Get().node_[8].value = log2(double(nHA));
+  Get().node_[9].index = 10;
+  Get().node_[9].value = log2(double(nHB));
+  Get().node_[10].index = 11;
+  Get().node_[10].value = log2(double(nWA));
+  Get().node_[11].index = -1;
   double predict_label = svm_predict(Get().model_, Get().node_);
+  ///LOG(INFO) << "Feature: " << Get().node_[0].value << Get().node_[1].value << Get().node_[10].value;
+  ///LOG(INFO) << "Feature0: " << Get().node_[0].value; 
+  ///LOG(INFO) << "Feature2: " << Get().node_[2].value; 
+  ///LOG(INFO) << "Feature8: " << Get().node_[8].value; 
+  ///LOG(INFO) << "Feature9: " << Get().node_[9].value; 
+  ///LOG(INFO) << "Feature10: " << Get().node_[10].value; 
+  ///LOG(INFO) << "Predict Label:      " << predict_label;
   return predict_label;
 }
 
