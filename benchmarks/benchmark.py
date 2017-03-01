@@ -7,6 +7,7 @@ import settings
 
 caffebin = settings.OPTIMIZED_CAFFE_BIN
 original_caffebin = settings.ORIGINAL_CAFFE_BIN
+DEBUG = False
 
 config_file_home=settings.CONFIG_FILE_HOME
 
@@ -25,7 +26,8 @@ def get_average_time(filename):
 def execute(config_file, gpu_id='0', bin=original_caffebin):
     logfile = '%s.log'%config_file
     cmd = '%s time -model=%s/%s -gpu=%s -iterations=16>&%s'%(bin, config_file_home, config_file, gpu_id, logfile)
-    #print cmd
+    if DEBUG:
+        print cmd
     os.system(cmd)
     process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
     process.wait()
@@ -36,9 +38,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Benchmark script')
     parser.add_argument('-d', '--gpu_id', help='GPU ID used', default='0')
     parser.add_argument('-b', '--original_caffe', help='Benchmark original (0) or optimized (1)', default='0')
+    parser.add_argument('-D', '--debug', help='Debug mode', default='0')
     p = parser.parse_args()
+    DEBUG = p.debug == '1'
+    #hiddens = [[2048, 2048]]
     hiddens = [[4096, 4096]]
-    batches = [256, 512, 1024, 2048, 4096]
+    batches = [256, 512, 1024, 2048, 4096, 8192]
     bin = original_caffebin 
     if p.original_caffe == '1':
         bin = caffebin 
