@@ -4,7 +4,6 @@ import subprocess
 import re
 import settings
 
-
 caffebin = settings.OPTIMIZED_CAFFE_BIN
 original_caffebin = settings.ORIGINAL_CAFFE_BIN
 DEBUG = False
