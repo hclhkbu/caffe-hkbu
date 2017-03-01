@@ -2,17 +2,12 @@ import argparse
 import sys,os,time
 import subprocess
 import re
+import settings
 
-REPOS_HOME='/home/shshi/repos/caffe-optimized'
-#REPOS_HOME='/home/shshi/repos/caffe'
-caffebin=REPOS_HOME+'/build-8.0/tools/caffe'
-#caffebin='/home/dl/caffe-openblas/build/tools/caffe'
-#caffebin='/home/dl/caffe-hkbu/build-8.0/tools/caffe'
+caffebin = settings.OPTIMIZED_CAFFE_BIN
+original_caffebin = settings.ORIGINAL_CAFFE_BIN
 
-config_file_home=REPOS_HOME+'/benchmarks/2_layer'
-#config_file_home='/home/dl/caffe-hkbu-lr/benchmarks'
-default_gpu_id=0
-#default_gpu_id=1
+config_file_home=settings.CONFIG_FILE_HOME
 
 def get_average_time(filename):
     file = open(filename, "r")
@@ -26,9 +21,9 @@ def get_average_time(filename):
     return 0 
 
 
-def execute(config_file):
+def execute(config_file, gpu_id='0', bin=original_caffebin):
     logfile = '%s.log'%config_file
-    cmd = '%s time -model=%s/%s -gpu=%d -iterations=16>&%s'%(caffebin, config_file_home, config_file, default_gpu_id, logfile)
+    cmd = '%s time -model=%s/%s -gpu=%s -iterations=16>&%s'%(bin, config_file_home, config_file, gpu_id, logfile)
     #print cmd
     os.system(cmd)
     process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
@@ -37,10 +32,15 @@ def execute(config_file):
     return ms
 
 if __name__ == '__main__':
-    #hiddens = [[4096, 4096], [128, 1024]]
+    parser = argparse.ArgumentParser(description='Benchmark script')
+    parser.add_argument('-d', '--gpu_id', help='GPU ID used', default='0')
+    parser.add_argument('-b', '--original_caffe', help='Benchmark original (0) or optimized (1)', default='0')
+    p = parser.parse_args()
     hiddens = [[4096, 4096]]
     batches = [256, 512, 1024, 2048, 4096]
-    #batches = [1024, 2048, 4096, 8192, 16384, 16384*2]
+    bin = original_caffebin 
+    if p.original_caffe == '1':
+        bin = caffebin 
     for hidden in hiddens:
         h1 = hidden[0]
         h2 = hidden[1]
@@ -51,5 +51,5 @@ if __name__ == '__main__':
             #process.wait()
             #config_file = 'fcn5-b%d.prototxt' % batch
             config_file = '%d-%d-b%d.prototxt' % (h1, h2, batch)
-            ms = execute(config_file)
+            ms = execute(config_file, p.gpu_id, bin)
             print ','.join([str(batch), str(h1), str(h2), str(ms/1000)])

@@ -98,3 +98,4 @@ MANIFEST-*
 # Logs
 *.log
 *-b*.prototxt
+settings.py
