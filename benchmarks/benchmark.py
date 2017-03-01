@@ -39,6 +39,7 @@ if __name__ == '__main__':
     parser.add_argument('-d', '--gpu_id', help='GPU ID used', default='0')
     parser.add_argument('-b', '--original_caffe', help='Benchmark original (0) or optimized (1)', default='0')
     parser.add_argument('-D', '--debug', help='Debug mode', default='0')
+    parser.add_argument('-s', '--dataset', help='Dataset: synthetic (sy) or mnist (mn)', default='sy')
     p = parser.parse_args()
     DEBUG = p.debug == '1'
     #hiddens = [[2048, 2048]]
@@ -52,10 +53,13 @@ if __name__ == '__main__':
         h2 = hidden[1]
         for batch in batches:
             # Create prototxt
-            #cmd = 'batch_size=%d ./gen-fcn5.sh' % batch
-            #process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
-            #process.wait()
-            #config_file = 'fcn5-b%d.prototxt' % batch
-            config_file = '%d-%d-b%d.prototxt' % (h1, h2, batch)
+            if p.dataset == 'sy':
+                config_file = '%d-%d-b%d.prototxt' % (h1, h2, batch)
+            else:
+                config_file_home = '%s/%s' % (settings.REPOS_HOME, '/benchmarks')
+                config_file = 'fcn5-b%d.prototxt' % batch
+                cmd = 'batch_size=%d ./gen-fcn5.sh' % batch
+                process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+                process.wait()
             ms = execute(config_file, p.gpu_id, bin)
             print ','.join([str(batch), str(h1), str(h2), str(ms/1000)])

@@ -29,23 +29,23 @@ void caffe_gpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
   // 2. Force: force to use transpose + nn if there is enough memory
   // 3. Linear model: some cases: transpose+nn, other cases: tn 
   if (cuTransA == CUBLAS_OP_N && cuTransB == CUBLAS_OP_T) {
-      size_t availableMemory, totalMemory;
-      cudaMemGetInfo(&availableMemory, &totalMemory);
-      size_t neededMemory = sizeof(float) * N * K;
+      //size_t availableMemory, totalMemory;
+      //cudaMemGetInfo(&availableMemory, &totalMemory);
+      //size_t neededMemory = sizeof(float) * N * K;
 
-      if (availableMemory > neededMemory)  {
-          double label = Caffe::predict(M, N, K);
-          //double label = Caffe::xgPredict(M, N, K);
+      //if (availableMemory > neededMemory)  {
+          double label = Caffe::predict(K, M, N);
+      //    //double label = Caffe::xgPredict(M, N, K);
           if (label < 0) {
             caffe_gpu_gemm_tn(M, N, K, alpha, A, B, beta, C);
           } else {
             CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
                           N, M, K, &alpha, B, ldb, A, lda, &beta, C, N));
           }
-      } else {
-          CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
-                  N, M, K, &alpha, B, ldb, A, lda, &beta, C, N));
-      }
+      //} else {
+      //    CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
+      //            N, M, K, &alpha, B, ldb, A, lda, &beta, C, N));
+      //}
 
   } else {
       CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
