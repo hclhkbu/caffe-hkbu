@@ -34,9 +34,9 @@ void caffe_gpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
       size_t neededMemory = sizeof(float) * N * K;
 
       if (availableMemory > neededMemory)  {
-          //double label = Caffe::predict(M, N, K);
-          double label = Caffe::xgPredict(M, N, K);
-          if (label < 0.5) {
+          double label = Caffe::predict(M, N, K);
+          //double label = Caffe::xgPredict(M, N, K);
+          if (label < 0) {
             caffe_gpu_gemm_tn(M, N, K, alpha, A, B, beta, C);
           } else {
             CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
