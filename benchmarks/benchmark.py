@@ -43,7 +43,10 @@ if __name__ == '__main__':
     DEBUG = p.debug == '1'
     #hiddens = [[2048, 2048]]
     hiddens = [[4096, 4096]]
-    batches = [256, 512, 1024, 2048, 4096, 8192]
+    if p.dataset == 'sy':
+        batches = [128, 256, 512, 1024, 2048, 4096]
+    else:
+        batches = [128, 256, 512, 1024, 2048, 4096, 8192]
     bin = original_caffebin 
     if p.original_caffe == '1':
         bin = caffebin 
