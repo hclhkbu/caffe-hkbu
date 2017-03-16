@@ -140,7 +140,7 @@ class Caffe {
 
   // Integrated with SVM model for calculating A*B^T with cuBLAS
   static double predict(size_t nWA, size_t nHA, size_t nHB);
-  static double xgPredict(size_t nWA, size_t nHA, size_t nHB);
+  float xgPredict(size_t nWA, size_t nHA, size_t nHB);
 #endif
 
   // Returns the mode: running on CPU or GPU.
@@ -178,8 +178,9 @@ class Caffe {
   struct svm_node *node_;
   cudaDeviceProp deviceProp_;
   BoosterHandle xgBooster_;
-  float xgSampleFeatures_[1][11];
+  float xgSampleFeatures_[1][8];
   DMatrixHandle xgTrain_[1];
+  DMatrixHandle xgTestSample_;
 #endif
   shared_ptr<RNG> random_generator_;
 

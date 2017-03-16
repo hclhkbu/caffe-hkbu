@@ -1,4 +1,4 @@
-name: "FCN5"
+name: "FCN5MN"
 layer {
   name: "data"
   type: "Data"
@@ -81,13 +81,20 @@ layer {
   top: "H2"
 }
 
+
 layer {
   name: "H3"
   type: "InnerProduct"
   bottom: "H2"
   top: "H3"
   inner_product_param {
-    num_output: 1024 
+    num_output: 4096 
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
   }
 }
 
@@ -98,11 +105,28 @@ layer {
   top: "H3"
 }
 
+layer {
+  name: "H4"
+  type: "InnerProduct"
+  bottom: "H3"
+  top: "H4"
+  inner_product_param {
+    num_output: 1024 
+  }
+}
+
+layer {
+  name: "H4_A"
+  type: "Sigmoid"
+  bottom: "H4"
+  top: "H4"
+}
+
 
 layer {
   name: "L"
   type: "InnerProduct"
-  bottom: "H3"
+  bottom: "H4"
   top: "L"
   inner_product_param {
     num_output: 10 

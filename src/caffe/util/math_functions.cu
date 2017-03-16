@@ -28,15 +28,15 @@ void caffe_gpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
   // 1. Naive: only use cublasSgemm: nn or tn
   // 2. Force: force to use transpose + nn if there is enough memory
   // 3. Linear model: some cases: transpose+nn, other cases: tn 
-  if (cuTransA == CUBLAS_OP_N && cuTransB == CUBLAS_OP_T) {
+  if (M > 1024 && N > 1024 && K > 1024 && cuTransA == CUBLAS_OP_N && cuTransB == CUBLAS_OP_T) {
       //size_t availableMemory, totalMemory;
       //cudaMemGetInfo(&availableMemory, &totalMemory);
       //size_t neededMemory = sizeof(float) * N * K;
 
       //if (availableMemory > neededMemory)  {
-          double label = Caffe::predict(K, M, N);
-      //    //double label = Caffe::xgPredict(M, N, K);
-          if (label < 0) {
+          //double label = Caffe::predict(K, M, N);
+          float label = Caffe::Get().xgPredict(K, M, N);
+          if (label < 0.5) {
             caffe_gpu_gemm_tn(M, N, K, alpha, A, B, beta, C);
           } else {
             CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), cuTransB, cuTransA,
@@ -78,23 +78,25 @@ void caffe_gpu_gemm_tn(const int M, const int N, const int K,
     const float alpha, const float* A, const float* B, const float beta,
     float* C) {
   // Do the transposition first before calling cublas
-  int size_x, size_y;
-  size_x = K;
-  size_y = N;
-  dim3 gridt((size_x - 1)/TILE_DIM  + 1, (size_y - 1)/TILE_DIM + 1), blockt(TILE_DIM, TILE_DIM);
+  //int size_x, size_y;
+  //size_x = K;
+  //size_y = N;
+  //dim3 gridt((size_x - 1)/TILE_DIM  + 1, (size_y - 1)/TILE_DIM + 1), blockt(TILE_DIM, TILE_DIM);
   float *d_BT;
-  CUDA_CHECK(cudaMalloc((void **) &d_BT, size_x * size_y * sizeof(float)));
+  CUDA_CHECK(cudaMalloc((void **) &d_BT, K * N * sizeof(float)));
   //caffe_gpu_transpose<float><<<gridt, blockt>>>(d_BT, (float *)B, size_x, size_y);
+  const float alpha1 = 1.0f;
+  const float beta1  = 0.0f;
   CUBLAS_CHECK(cublasSgeam(Caffe::cublas_handle(), CUBLAS_OP_T, CUBLAS_OP_T,
               N, K,  
-              &alpha, B, K,  
-              &beta, NULL, K,
+              &alpha1, B, K,  
+              &beta1, NULL, K,
               d_BT, N));
   
-  int lda = K; 
-  int ldb = N; 
+  //int lda = K; 
+  //int ldb = N; 
   CUBLAS_CHECK(cublasSgemm(Caffe::cublas_handle(), CUBLAS_OP_N, CUBLAS_OP_N,
-      N, M, K, &alpha, d_BT, ldb, A, lda, &beta, C, N));
+      N, M, K, &alpha, d_BT, N, A, K, &beta, C, N));
   CUDA_CHECK(cudaFree(d_BT));
 }
 

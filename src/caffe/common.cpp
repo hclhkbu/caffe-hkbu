@@ -147,36 +147,35 @@ Caffe::Caffe()
 
   //init xgboost
   LOG(INFO) << "Start to init xgboost ......";
-  int nCols=11, nRows=1;
+  int nCols=8, nRows=1;
   float train[nRows][nCols];
   for (int i=0;i<nRows;i++)
       for (int j=0;j<nCols;j++)
           train[i][j] = (i+1) * (j+1);
   XGDMatrixCreateFromMat((float *) train, nRows, nCols, 0, &(xgTrain_[0]));
   XGBoosterCreate(xgTrain_, 1, &xgBooster_);
-  XGBoosterLoadModel(xgBooster_, "/tmp/xgboostgemm2.model");
+  //XGBoosterLoadModel(xgBooster_, "/tmp/xgboostgemm2.model");
+  XGBoosterLoadModel(xgBooster_, "/tmp/xgboostgemmpascal.model");
   XGBoosterSetParam(xgBooster_, "booster", "gbtree");
   XGBoosterSetParam(xgBooster_, "objective", "binary:logistic");
-  XGBoosterSetParam(xgBooster_, "max_depth", "16");
+  XGBoosterSetParam(xgBooster_, "max_depth", "8");
   XGBoosterSetParam(xgBooster_, "eta", "1");
   XGBoosterSetParam(xgBooster_, "gamma", "0");
-  xgSampleFeatures_[0][0] = prop.major;
-  xgSampleFeatures_[0][1] = prop.minor;
-  xgSampleFeatures_[0][2] = prop.totalGlobalMem;
-  xgSampleFeatures_[0][3] = prop.multiProcessorCount;
-  xgSampleFeatures_[0][4] = prop.clockRate;
-  xgSampleFeatures_[0][5] = prop.memoryClockRate;
-  xgSampleFeatures_[0][6] = prop.memoryBusWidth;
-  xgSampleFeatures_[0][7] = prop.l2CacheSize;
+  XGBoosterSetParam(xgBooster_, "silent", "1");
+  XGBoosterSetParam(xgBooster_, "nthread", "1");
+  xgSampleFeatures_[0][0] = prop.totalGlobalMem;
+  xgSampleFeatures_[0][1] = prop.multiProcessorCount;
+  xgSampleFeatures_[0][2] = prop.clockRate;
+  xgSampleFeatures_[0][3] = prop.memoryBusWidth;
+  xgSampleFeatures_[0][4] = prop.l2CacheSize;
   //xgSampleFeatures_[0][7] = prop.sharedMemPerBlock;
   //xgSampleFeatures_[0][8] = prop.totalConstMem;
   //xgSampleFeatures_[0][9] = prop.regsPerBlock;
 
   bst_ulong out_len;
   const float *f;
-  DMatrixHandle xgTestSample;
-  XGDMatrixCreateFromMat((float *) train, 1, 11, -1, &xgTestSample);
-  XGBoosterPredict(xgBooster_, xgTestSample, 0,0,&out_len,&f);
+  XGDMatrixCreateFromMat((float *) train, 1, nCols, -1, &xgTestSample_);
+  XGBoosterPredict(xgBooster_, xgTestSample_, 0,8,&out_len,&f);
   LOG(INFO) << "Init xgboost finished!"; 
 }
 
@@ -289,18 +288,18 @@ double Caffe::predict(size_t nWA, size_t nHA, size_t nHB) {
   return predict_label;
 }
 
-double Caffe::xgPredict(size_t nWA, size_t nHA, size_t nHB) {
+float Caffe::xgPredict(size_t nWA, size_t nHA, size_t nHB) {
+   // return 1.0;
   //LOG(INFO) << "Start to predict ";
-  Get().xgSampleFeatures_[0][8] = nHA;
-  Get().xgSampleFeatures_[0][9] = nHB;
-  Get().xgSampleFeatures_[0][10] = nWA;
-  DMatrixHandle xgTestSample;
-  XGDMatrixCreateFromMat((float *) Get().xgSampleFeatures_, 1, 11, -1, &xgTestSample);
+  xgSampleFeatures_[0][5] = nHA;
+  xgSampleFeatures_[0][6] = nHB;
+  xgSampleFeatures_[0][7] = nWA;
+  XGDMatrixCreateFromMat((float *) xgSampleFeatures_, 1, 8, -1, &xgTestSample_);
   //LOG(INFO) << "Create matrix finished:      ";
   bst_ulong out_len;
   const float *f;
-  XGBoosterPredict(Get().xgBooster_, xgTestSample, 0,0,&out_len,&f);
-  double label = f[0];
+  XGBoosterPredict(xgBooster_, xgTestSample_, 0, 8, &out_len,&f);
+  float label = f[0];
   //LOG(INFO) << "Predict Label:      " << label;
   //LOG(INFO) << "Out length:      " << out_len;
   //XGBoosterFree(xgTestSample);

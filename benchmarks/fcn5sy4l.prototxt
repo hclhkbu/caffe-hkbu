@@ -1,0 +1,89 @@
+layer {
+  name: "Data1"
+  type: "Data"
+  top: "Data1"
+  top: "Data2"
+  data_param {
+    source: "HOME/data/caffe/fake_data26752.lmdb"
+    batch_size: BATCHSIZE 
+    backend: LMDB
+  }
+}
+layer {
+  name: "InnerProduct1"
+  type: "InnerProduct"
+  bottom: "Data1"
+  top: "InnerProduct1"
+  inner_product_param {
+    num_output: 4096
+  }
+}
+layer {
+  name: "Sigmoid1"
+  type: "Sigmoid"
+  bottom: "InnerProduct1"
+  top: "InnerProduct1"
+}
+layer {
+  name: "InnerProduct2"
+  type: "InnerProduct"
+  bottom: "InnerProduct1"
+  top: "InnerProduct2"
+  inner_product_param {
+    num_output: 4096
+  }
+}
+layer {
+  name: "Sigmoid2"
+  type: "Sigmoid"
+  bottom: "InnerProduct2"
+  top: "InnerProduct2"
+}
+layer {
+  name: "InnerProduct3"
+  type: "InnerProduct"
+  bottom: "InnerProduct2"
+  top: "InnerProduct3"
+  inner_product_param {
+    num_output: 4096
+  }
+}
+layer {
+  name: "Sigmoid3"
+  type: "Sigmoid"
+  bottom: "InnerProduct3"
+  top: "InnerProduct3"
+}
+
+layer {
+  name: "InnerProduct4"
+  type: "InnerProduct"
+  bottom: "InnerProduct3"
+  top: "InnerProduct4"
+  inner_product_param {
+    num_output: 4096
+  }
+}
+layer {
+  name: "Sigmoid4"
+  type: "Sigmoid"
+  bottom: "InnerProduct4"
+  top: "InnerProduct4"
+}
+layer {
+  name: "InnerProduct5"
+  type: "InnerProduct"
+  bottom: "InnerProduct4"
+  top: "InnerProduct5"
+  inner_product_param {
+    num_output: 26752
+  }
+}
+layer {
+  name: "SoftmaxWithLoss1"
+  type: "SoftmaxWithLoss"
+  bottom: "InnerProduct5"
+  bottom: "Data2"
+  top: "SoftmaxWithLoss1"
+}
+
