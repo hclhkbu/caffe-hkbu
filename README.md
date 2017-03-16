@@ -1,5 +1,5 @@
 # Caffe-optimized
-This is a optimized Caffe for speeding up the training efficiency.
+This is a optimized Caffe for speeding up the training efficiency by using MTNN.
 
 The original Caffe can be found here(https://gitter.im/BVLC/caffe).
 
